@@ -1,0 +1,42 @@
+name: Deploy to Nekoweb
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+
+      - name: Safely Deploy to Nekoweb
+        env:
+          NEKOWEB_GIT_URL: ${{ secrets.NEKOWEB_GIT_URL }}
+        run: |
+          # 1. Clone your current Nekoweb site safely
+          git clone $NEKOWEB_GIT_URL nekoweb-site
+          
+          # 2. Copy the newly built files into the cloned site
+          cp -r public/* nekoweb-site/
+          
+          # 3. Commit and push the changes normally
+          cd nekoweb-site
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Automated deploy from GitHub"
+          git push
