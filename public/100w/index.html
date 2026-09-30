@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    .top-menu a, .top-menu a:visited { color: #c1bdb0 !important; }
+  </style>
+
+  <link rel="stylesheet" href="/css.css">
+  <link rel="stylesheet" href="/css.css?v=202609302016">
+
+</head>
+<body>
+  
+  <canvas id="fire-canvas"></canvas>
+
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/assets/fire-bg.mp4" type="video/mp4">
+  </video>
+
+  <div id="top">
+      <nav class="top-menu">
+
+          <button class="hamburger-btn" aria-label="Open Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+
+        <ul class="main-menu-list">
+          <li><a href="/">Home</a></li>
+
+          <li><a href="#" class="dropdown-toggle">About</a>
+          
+              <ul class="dropdown-content">
+              <li><a href="/me/">Me</a></li>
+              <li><a href="/site/">Site</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="dropdown-toggle">Gallery</a>
+          
+            <ul class="dropdown-content">
+              <li><a href="/traditional/">Traditional</a></li>
+              <li><a href="/digital/">Digital</a></li>
+              <li><a href="/photos/">Photos</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#" class="dropdown-toggle">Blog</a>
+          
+          <ul class="dropdown-content">
+              <li><a href="/blog/">Home</a></li>
+              <li><a href="/blog/yearly-archive/">Archives</a></li>
+              <li><a href="/blog/tags/">Tags</a></li>
+              <li><a href="/blog/feed.xml"><svg class="rss-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM32 160c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></a></li>
+            </ul>
+          </li>
+
+          <li><a href="/links/">Links</a></li>
+
+          <li><a href="#" class="dropdown-toggle">Contact</a>
+          
+            <ul class="dropdown-content">
+              <li><a href="/email/">Email</a></li>
+              <li><a href="/guestbook/">Guestbook</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+  <div id="header">
+      <div id="title-wrapper"><h1>Karhukarhu .place</h1></div>
+  </div>
+
+</div>
+
+  <div id="middle">
+    <div id="sidebar"><div id="sidebar-wrapper">
+
+    <h2>Status</h2>
+
+    <div class="clock-widget"><p class="sml">My current time is: <span id="owner-clock" class="clock-widget">Loading time...</span> (UTC+3) <span id="owner-status" class="status-widget"></span></p></div>
+
+
+                
+                <h4 id="track-label">Loading music...</h4>
+                <div class="lastfm-container">
+                    <div id="track-image"></div>
+                    <div class="lastfm-text-container">
+                        <span id="track-name"></span>
+                        <span id="track-artist"></span>
+                    </div>
+                </div>
+                
+                <h4 id="game-label">Most played</h4>
+                <div class="steam-game-container">
+                    <div id="game-icon" src="" alt="Game Icon"></div>
+                    <div class="steam-text-container">
+                        
+                        <span id="game-name">Loading...</span>
+                    </div>
+                </div>
+
+<div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=karhukarhu" defer></script>
+
+    </div></div>
+    <main class="content-area">
+      <div id="content-wrapper">
+        
+          <h2>100 Questions for Webmasters</h2>
+
+            By <a href="https://mouseling.net/" target="new" >Mouseling</a><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg>
+
+            
+
+<div class="q-item">
+  <div class="q-num">1.</div>
+  <div class="q-content">
+    <div class="question">Please introduce yourself.</div>
+    <div class="q-answer">Hi I'm Karhukarhu</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">2.</div>
+  <div class="q-content">
+    <div class="question"> How long have you been making websites?</div>
+    <div class="q-answer">Around 20 yrs on and off</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">3.</div>
+  <div class="q-content">
+    <div class="question">And what got you into the hobby?</div>
+    <div class="q-answer">I wanted to make virtual horse stables in my childhood</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">4.</div>
+  <div class="q-content">
+    <div class="question">What kind of website are you most interested in?</div>
+    <div class="q-answer">Portfolio for myself. Now I'm also into this personal website too</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">5.</div>
+  <div class="q-content">
+    <div class="question">What's your workflow? Do you plan your websites out thoroughly or do you come up with the design as you go along?</div>
+    <div class="q-answer">I come up with it as I go pretty much</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">6.</div>
+  <div class="q-content">
+    <div class="question">Please link to your biggest inspirations.</div>
+    <div class="q-answer">I don't know D'': I don't have! I do my own stuff...</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">7.</div>
+  <div class="q-content">
+    <div class="question">What's your favourite part about making websites?</div>
+    <div class="q-answer">CSS'ing</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">8.</div>
+  <div class="q-content">
+    <div class="question">And the thing you struggle with the most?</div>
+    <div class="q-answer">Flexboxes, definitely flexboxes. And grids!</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">9.</div>
+  <div class="q-content">
+    <div class="question">Do you keep the same layout on all of your pages? Or do you use different ones?</div>
+    <div class="q-answer">I keep the same one for simplicity and consistency. I get easily overwhelmed by different layouts on each page.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">10.</div>
+  <div class="q-content">
+    <div class="question">How confident are you with CSS?</div>
+    <div class="q-answer">Rather. Some aspects give me gray hair still</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">11.</div>
+  <div class="q-content">
+    <div class="question">Do you know how to correctly use &lt;dl&gt;?</div>
+    <div class="q-answer">Actually, the first time I ran into this tag was this questionnaire. I ended up ditching it though, since it's so hard to style it</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">12.</div>
+  <div class="q-content">
+    <div class="question">What is your favourite HTML element?</div>
+    <div class="q-answer"><*stronk><*/stronk></div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">13.</div>
+  <div class="q-content">
+    <div class="question">If you're making a new web page from scratch, what is the first thing you do?</div>
+    <div class="q-answer">Base structure of the layout</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">14.</div>
+  <div class="q-content">
+    <div class="question">Do you know JavaScript?</div>
+    <div class="q-answer">Hardly any.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">15.</div>
+  <div class="q-content">
+    <div class="question">How about PHP?</div>
+    <div class="q-answer">Kinda a bit.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">16.</div>
+  <div class="q-content">
+    <div class="question">Does your website have a theme that you stick to?</div>
+    <div class="q-answer">No, not really. I tend to do a lot of B&W, but I'm not limited to it. This site, for example, is something I've never really done before theme wise</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">17.</div>
+  <div class="q-content">
+    <div class="question">Are you more focused on content or design?</div>
+    <div class="q-answer">Design. Suck at making content.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">18.</div>
+  <div class="q-content">
+    <div class="question">Do you own a domain name? If not, would you ever want to?</div>
+    <div class="q-answer">Yes I do have, multiple</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">19.</div>
+  <div class="q-content">
+    <div class="question">What do you think of nostalgia-focused or "retro" websites?</div>
+    <div class="q-answer">I think they're fun but often too overwhelming for me.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">20.</div>
+  <div class="q-content">
+    <div class="question">Is your HTML valid? Do you even check?</div>
+    <div class="q-answer">I don't check, I just cross my fingers...</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">21.</div>
+  <div class="q-content">
+    <div class="question">What are your opinion on buttons and banners?</div>
+    <div class="q-answer">Ummm... They're cool. I have my own button if someone wants to link me back</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">22.</div>
+  <div class="q-content">
+    <div class="question">What do you think of button walls in particular?</div>
+    <div class="q-answer">Rarely go through them and not planning to make my own, but they can tell a lot about the person putting them up</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">23.</div>
+  <div class="q-content">
+    <div class="question">If you started over again, would you make something similar or completely different?</div>
+    <div class="q-answer">It depends on what we're talking about. About my current project, I'd probably do some things differently</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">24.</div>
+  <div class="q-content">
+    <div class="question">Are you envious of other people's websites?</div>
+    <div class="q-answer">Hmmm... not really envious, I respect the amount of work they've put into them.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">25.</div>
+  <div class="q-content">
+    <div class="question">What text editor do you use?</div>
+    <div class="q-answer">Visual Studio Code and occationally Notepad++</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">26.</div>
+  <div class="q-content">
+    <div class="question">Why do you use that one?</div>
+    <div class="q-answer">I'm a Microsoft slave</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">27.</div>
+  <div class="q-content">
+    <div class="question">Do you host your image files on your web server, or on another host?</div>
+    <div class="q-answer">I always host on my own server</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">28.</div>
+  <div class="q-content">
+    <div class="question">This might not be relevant to you, but what's your opinion on the Neocities vs. Nekoweb debate?</div>
+    <div class="q-answer">I have no idea what the debate is about, really. I'm interested to know though. Have to search it up. Why I migrated to Nekoweb was no file type limits as well as no content security policy. Also, cheaper donator perks :)</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">29.</div>
+  <div class="q-content">
+    <div class="question">How much server space would you estimate your main website takes up?</div>
+    <div class="q-answer">Ehhhh....50mt?? My main site isn't hosted by Nekoweb.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">30.</div>
+  <div class="q-content">
+    <div class="question">Do you keep local backups of your files?</div>
+    <div class="q-answer">I'm notoriously bad at it, but I try my best</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">31.</div>
+  <div class="q-content">
+    <div class="question">Do you prefer simple or highly visual websites?</div>
+    <div class="q-answer">This one depends on the content on the website. But I'm a visual person.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">32.</div>
+  <div class="q-content">
+    <div class="question">Do you stick to certain colours? Do you do that on purpose, or is it your subconscious?</div>
+    <div class="q-answer">I do stick with b&w very often. I dared to use some colours in my current project though.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">33.</div>
+  <div class="q-content">
+    <div class="question">Have you ever thought about quitting? Why?</div>
+    <div class="q-answer">I've been on and off. I don't have to quit completely. I just stop doing it untill I do it again.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">34.</div>
+  <div class="q-content">
+    <div class="question">Do you have many webmaster friends, or is it a solitary hobby?</div>
+    <div class="q-answer">I don't really have friends yet</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">35.</div>
+  <div class="q-content">
+    <div class="question">Do people in your real life know about your website</div>
+    <div class="q-answer">Not the newest one, no. But they do know about some of my other websites. I'm trying to keep this one disclosed</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">36.</div>
+  <div class="q-content">
+    <div class="question">Do you update your website very often? How often is "very often"?</div>
+    <div class="q-answer">At this point, when there is still tweaking to be done, I update it daily. But for my other sites, I havent touched them in months</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">37.</div>
+  <div class="q-content">
+    <div class="question">And the overall design, do you change that much? Why or why not?</div>
+    <div class="q-answer">Not often. It takes so much work. But I'm planning to do it in the future at some point</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">38.</div>
+  <div class="q-content">
+    <div class="question">Is your website more you-focused, hobby-focused, or outside world-focused?</div>
+    <div class="q-answer">Probablt me-focused. Me myself and I</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">39.</div>
+  <div class="q-content">
+    <div class="question">Do you do web design professionally?</div>
+    <div class="q-answer">No</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">40.</div>
+  <div class="q-content">
+    <div class="question">If not, would you like to? And if you're comfortable answering, what do you do for work?</div>
+    <div class="q-answer">Yes, if someone thinks I'm talented enough. I'm unemployed</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">41.</div>
+  <div class="q-content">
+    <div class="question">Do you communicate with people by email very much?</div>
+    <div class="q-answer">No</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">42.</div>
+  <div class="q-content">
+    <div class="question">Some people reject social media and use websites as a replacement. Do you keep social media outside of your website?</div>
+    <div class="q-answer">I have Youtube and Twitch accounts. Other than that, I don't really use social media.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">43.</div>
+  <div class="q-content">
+    <div class="question">How about instant messengers? Do you use a mainstream one like Discord or Telegram? Or something like Matrix? Do you avoid them?</div>
+    <div class="q-answer">I use Discord a lot</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">44.</div>
+  <div class="q-content">
+    <div class="question">Do you listen to music while you work on websites? If so, what kinds of artists?</div>
+    <div class="q-answer">Sometimes, what ever I'm into at that point. Currently been listening to Tame Impala</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">45.</div>
+  <div class="q-content">
+    <div class="question">Do you keep everything you make on one website, or do you have more than one?</div>
+    <div class="q-answer">I have a couple of projects. 4 of them are online and published.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">46.</div>
+  <div class="q-content">
+    <div class="question">On a similar note, do you keep to one topic on your site, or many?</div>
+    <div class="q-answer">One topic per site. But this site is an exception, here I have both, art and a blog!</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">47.</div>
+  <div class="q-content">
+    <div class="question">Do you present your real self, or at least try? Or do you construct a persona on purpose?</div>
+    <div class="q-answer">Ummm... I don't know, I guess it's just me being me here and everywhere else</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">48.</div>
+  <div class="q-content">
+    <div class="question">Have you ever made a good friend thanks to your website?</div>
+    <div class="q-answer">No</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">49.</div>
+  <div class="q-content">
+    <div class="question">Are you happy with the way HTML and CSS currently work?</div>
+    <div class="q-answer">Yes</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">50.</div>
+  <div class="q-content">
+    <div class="question">What are practices that you think people should avoid?</div>
+    <div class="q-answer">Don't put autoplay music on your websites!!!</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">51.</div>
+  <div class="q-content">
+    <div class="question">What about under-utilised practices, or things you think people should do more?</div>
+    <div class="q-answer">Well, I think everyone should do whatever and however they wan it to. I mean legally acceptable practices. And no autoplay music</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">52.</div>
+  <div class="q-content">
+    <div class="question">Do you use a lot of semantic HTML? Or are you guilty of generic structure?</div>
+    <div class="q-answer">I use some semantic elements, but very little overall</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">53.</div>
+  <div class="q-content">
+    <div class="question">Do you consider different browsers?</div>
+    <div class="q-answer">I use them to test my website, but I guess I'll just stick with FF</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">54.</div>
+  <div class="q-content">
+    <div class="question">Speaking of, what's your preferred browser? Convince your readers why they should use it.</div>
+    <div class="q-answer">I use Firefox but I don't think its any better or worse than others. I'm not tech savvy</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">55.</div>
+  <div class="q-content">
+    <div class="question">And what OS are you on?</div>
+    <div class="q-answer">Win 11</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">56.</div>
+  <div class="q-content">
+    <div class="question">Do you have a strong opinion on that, or do you just happen to use it?</div>
+    <div class="q-answer">No strong opinion here. I also have a mac.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">57.</div>
+  <div class="q-content">
+    <div class="question">Are your websites mobile-friendly?</div>
+    <div class="q-answer">Yes, at least in mobile Firefox and Chrome</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">58.</div>
+  <div class="q-content">
+    <div class="question">What are your thoughts on autoplay?</div>
+    <div class="q-answer">Ohh God how I hate it! There's nothing good about it. I'm hyper acoustic :( I strongly discourage people from using it in their site. </div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">59.</div>
+  <div class="q-content">
+    <div class="question">What are your thoughts on webrings? Are you in any?</div>
+    <div class="q-answer">Cool idea, not for me though. Or I haven't found one that fits me</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">60.</div>
+  <div class="q-content">
+    <div class="question">Do you have any web shrines? What do you like to see in that sort of page?</div>
+    <div class="q-answer">I don't even know what they are :'')</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">61.</div>
+  <div class="q-content">
+    <div class="question">Are your websites "cliche", in your opinion?</div>
+    <div class="q-answer">Sort of. This one at least.</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">62.</div>
+  <div class="q-content">
+    <div class="question">What is your ideal website? Are you striving for that, or for something else?</div>
+    <div class="q-answer">I srtive for clarity and accessibility. Is my website currently that? I doubt</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">63.</div>
+  <div class="q-content">
+    <div class="question">Are you an artist? Do you draw or design your own assets?</div>
+    <div class="q-answer">Yes I design my own assets!</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">64.</div>
+  <div class="q-content">
+    <div class="question">What are your favourite resource sites?</div>
+    <div class="q-answer">W3 Schools is reliable companion</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">65.</div>
+  <div class="q-content">
+    <div class="question">Is there a habit you just can't get away from no matter how hard you try?</div>
+    <div class="q-answer">Self-hatred</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">66.</div>
+  <div class="q-content">
+    <div class="question">What's your biggest advice for a new webmaster?</div>
+    <div class="q-answer">Do your stuff I guess. And don't add autoplay music!</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">67.</div>
+  <div class="q-content">
+    <div class="question">Do you keep all your styling in CSS? Or do you hard-code some?</div>
+    <div class="q-answer">I admit I hardcode some, not much but sometimes it's just easier and makes sense</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">68.</div>
+  <div class="q-content">
+    <div class="question">What do you think of frameset layouts?</div>
+    <div class="q-answer">Aren't those outdated?</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">69.</div>
+  <div class="q-content">
+    <div class="question">How about table-based layouts?</div>
+    <div class="q-answer">Don't use tables on your layout! They're for displaying information, not for web design :O</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">70.</div>
+  <div class="q-content">
+    <div class="question">Do you subscribe to the ideas of "one-column", "two-column" and "three-column" layouts? Do you use any of these?</div>
+    <div class="q-answer">I'm not sure if I understand the question, but I think I'm currently using one(?)</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">71.</div>
+  <div class="q-content">
+    <div class="question">Do you spend longer on the HTML or the CSS?</div>
+    <div class="q-answer">CSS</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">72.</div>
+  <div class="q-content">
+    <div class="question">Have you ever made a page with no CSS? It's useful for your thoughts.</div>
+    <div class="q-answer">Never</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">73.</div>
+  <div class="q-content">
+    <div class="question">Do you ever find yourself making layouts with nothing to put on them? Or do you only make layouts when the need arises?</div>
+    <div class="q-answer">Haha yes! Content creation is the hardes part for me lol</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">74.</div>
+  <div class="q-content">
+    <div class="question">Would you consider yourself a beginner? Or advanced? Somewhere in the middle?</div>
+    <div class="q-answer">Beginner-middle even though I've started in my childhood lol</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">75.</div>
+  <div class="q-content">
+    <div class="question">Do you have a habit of looking at the source code of websites you visit?</div>
+    <div class="q-answer">No, maybe I should. In very special occastions I do though</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">76.</div>
+  <div class="q-content">
+    <div class="question">How did YOU learn how to make websites?</div>
+    <div class="q-answer">I don't even recall. I remember when I started, I didn't even know ctrl+c is a thing :''D</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">77.</div>
+  <div class="q-content">
+    <div class="question">Do you ever force elements to do things they're not supposed to?</div>
+    <div class="q-answer">Don't force the elements! Or they'll turn against you</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">78.</div>
+  <div class="q-content">
+    <div class="question">Thoughts on floating elements?</div>
+    <div class="q-answer">Avoid them</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">79.</div>
+  <div class="q-content">
+    <div class="question">When you're sizing stuff, what do you use first? Do you use px, em, %, or something else?</div>
+    <div class="q-answer">px, maybe that's a bad habit I don't know</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">80.</div>
+  <div class="q-content">
+    <div class="question">Do you have a favourite font?</div>
+    <div class="q-answer">I have so many! Currently obsessed with <a href="https://www.dafont.com/zai-smith-corona-galaxie-typewriter.font" target="new">zai Smith-Corona Galaxie Typewriter</a> by Tomasz Skowroński </div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">81.</div>
+  <div class="q-content">
+    <div class="question">Would you run a website with another person? How would that work?</div>
+    <div class="q-answer">I could do that, yes!</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">82.</div>
+  <div class="q-content">
+    <div class="question">Do you surf the Web to find new personal websites very often?</div>
+    <div class="q-answer">I do!</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">83.</div>
+  <div class="q-content">
+    <div class="question">Do you bookmark other people's websites? How would you feel knowing someone else bookmarked yours?</div>
+    <div class="q-answer">I do bookmark! I don't mind if my site gets bookmarked</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">84.</div>
+  <div class="q-content">
+    <div class="question">What do you want people to be most impressed with when they see your website?</div>
+    <div class="q-answer">Clarity of element placement, readability, personal design</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">85.</div>
+  <div class="q-content">
+    <div class="question">Are you interested in technology outside of websites? Do you collect?</div>
+    <div class="q-answer">Not really, I don't collect tech, I don't even have any gaming consoles</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">86.</div>
+  <div class="q-content">
+    <div class="question">How often and for how long are you online?</div>
+    <div class="q-answer">Wayy to often and wayy too long. I'm usually online</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">87.</div>
+  <div class="q-content">
+    <div class="question">When it comes to your website, who is your target audience?</div>
+    <div class="q-answer">People around same age as me (not kids)</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">88.</div>
+  <div class="q-content">
+    <div class="question">Have you ever been interested in XHTML?</div>
+    <div class="q-answer">Haha had to run a validator and made my site XHTML compatible. So I guess I'm interested</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">89.</div>
+  <div class="q-content">
+    <div class="question">Do you program in general? Have you ever written a program for use with or on your website, not counting simple JavaScript?</div>
+    <div class="q-answer">No I have not</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">90.</div>
+  <div class="q-content">
+    <div class="question">Speaking of programs that help you make websites, what do you think of static site generators (SSGs)? Have you ever used one?</div>
+    <div class="q-answer">SSGs? Like Eleventy? Yes, I have used</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">91.</div>
+  <div class="q-content">
+    <div class="question">Do you keep a hitcounter? Why or why not?</div>
+    <div class="q-answer">No I think it's irrelevant</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">92.</div>
+  <div class="q-content">
+    <div class="question">Do you frequent forums? Which ones?</div>
+    <div class="q-answer">No I don't</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">93.</div>
+  <div class="q-content">
+    <div class="question">Do you write your page content directly into the editor, or do you prepare it elsewhere, like a text document or a Word document?</div>
+    <div class="q-answer">Depends... Some blog posts I have prepared in Word before writing them into code editor</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">94.</div>
+  <div class="q-content">
+    <div class="question">Do you think you appear cool to others? A more accurate answer now: do other people ever say you're cool?</div>
+    <div class="q-answer">No, not at all. I'm as uncool as a person can be</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">95.</div>
+  <div class="q-content">
+    <div class="question">Are you embarrassed of your old work? Have you ever deleted everything out of shame?</div>
+    <div class="q-answer">No I'm not embarassed. There's no old work up anywhere. I haven't deleted anything out of shame</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">96.</div>
+  <div class="q-content">
+    <div class="question">Would you close down your website if you couldn't update it, or would you leave an archive?</div>
+    <div class="q-answer">I'd probably close it</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">97.</div>
+  <div class="q-content">
+    <div class="question">Do you reveal a lot about yourself on your website? Or are you more secretive?</div>
+    <div class="q-answer">I reveal as much as I want to. There are some aspects I will more likely address in my blog than about page</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">98.</div>
+  <div class="q-content">
+    <div class="question">Are you willing to reveal who your best online friend is, and/or if they have a website?</div>
+    <div class="q-answer">I don't have online friends yet</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">99.</div>
+  <div class="q-content">
+    <div class="question">And do you optimise the images on your website?</div>
+    <div class="q-answer">No, but I deffinitely should! Thanks for reminding!</div>
+  </div>
+</div>
+
+<div class="q-item">
+  <div class="q-num">100.</div>
+  <div class="q-content">
+    <div class="question">We're out of time! How do you feel after answering 100 questions? ....other than exhausted.</div>
+    <div class="q-answer">Was rather fun ^_^. Kudos to the author of this questionnaire! More than answering this, I'm exhaused by the fact that I had to separately edit every 100 questions to fit my page :'')</div>
+  </div>
+</div> 
+      </div>
+    </main>
+        <div id="footer">
+      <video autoplay muted loop playsinline class="box-video">
+    <source src="/assets/fire-bg.mp4" type="video/mp4">
+  </video>
+      <div class="footer-content"><span class="footer-text">© Karhukarhu 2026</span></div>
+    
+  </div>
+</div>
+  </div>
+
+
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <span class="lightbox-next">&#10095;</span>
+    <img class="lightbox-image" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="/dropdown.js"></script>
+  <script src="/fire.js"></script>
+  <script src="/back-to-top.js"></script>
+  <script src="/backend.js"></script>
+  <script src="/comment-widget.js"></script>
+
+</body>
+</html>

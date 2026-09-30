@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    .top-menu a, .top-menu a:visited { color: #c1bdb0 !important; }
+  </style>
+
+  <link rel="stylesheet" href="/css.css">
+  <link rel="stylesheet" href="/css.css?v=202609302016">
+
+</head>
+<body>
+  
+  <canvas id="fire-canvas"></canvas>
+
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/assets/fire-bg.mp4" type="video/mp4">
+  </video>
+
+  <div id="top">
+      <nav class="top-menu">
+
+          <button class="hamburger-btn" aria-label="Open Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+
+        <ul class="main-menu-list">
+          <li><a href="/">Home</a></li>
+
+          <li><a href="#" class="dropdown-toggle">About</a>
+          
+              <ul class="dropdown-content">
+              <li><a href="/me/">Me</a></li>
+              <li><a href="/site/">Site</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="dropdown-toggle">Gallery</a>
+          
+            <ul class="dropdown-content">
+              <li><a href="/traditional/">Traditional</a></li>
+              <li><a href="/digital/">Digital</a></li>
+              <li><a href="/photos/">Photos</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#" class="dropdown-toggle">Blog</a>
+          
+          <ul class="dropdown-content">
+              <li><a href="/blog/">Home</a></li>
+              <li><a href="/blog/yearly-archive/">Archives</a></li>
+              <li><a href="/blog/tags/">Tags</a></li>
+              <li><a href="/blog/feed.xml"><svg class="rss-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM32 160c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></a></li>
+            </ul>
+          </li>
+
+          <li><a href="/links/">Links</a></li>
+
+          <li><a href="#" class="dropdown-toggle">Contact</a>
+          
+            <ul class="dropdown-content">
+              <li><a href="/email/">Email</a></li>
+              <li><a href="/guestbook/">Guestbook</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+  <div id="header">
+      <div id="title-wrapper"><h1>Karhukarhu .place</h1></div>
+  </div>
+
+</div>
+
+  <div id="middle">
+    <div id="sidebar"><div id="sidebar-wrapper">
+
+    <h2>Status</h2>
+
+    <div class="clock-widget"><p class="sml">My current time is: <span id="owner-clock" class="clock-widget">Loading time...</span> (UTC+3) <span id="owner-status" class="status-widget"></span></p></div>
+
+
+                
+                <h4 id="track-label">Loading music...</h4>
+                <div class="lastfm-container">
+                    <div id="track-image"></div>
+                    <div class="lastfm-text-container">
+                        <span id="track-name"></span>
+                        <span id="track-artist"></span>
+                    </div>
+                </div>
+                
+                <h4 id="game-label">Most played</h4>
+                <div class="steam-game-container">
+                    <div id="game-icon" src="" alt="Game Icon"></div>
+                    <div class="steam-text-container">
+                        
+                        <span id="game-name">Loading...</span>
+                    </div>
+                </div>
+
+<div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=karhukarhu" defer></script>
+
+    </div></div>
+    <main class="content-area">
+      <div id="content-wrapper">
+        
+  	<h2>General Information</h2>
+ 
+  	
+<div class="dot-table">
+  
+  <div class="dot-row">
+    <span class="dot-label">Born</span>
+    <span class="dot-line"></span>
+    <span class="dot-desc">'92</span>
+  </div>
+
+  <div class="dot-row">
+    <span class="dot-label">Residence</span>
+    <span class="dot-line"></span>
+    <span class="dot-desc">Finland</span>
+  </div>
+
+  <div class="dot-row">
+    <span class="dot-label">Gender</span>
+    <span class="dot-line"></span>
+    <span class="dot-desc">Female (she/her)</span>
+  </div>
+
+  <div class="dot-row">
+    <span class="dot-label">Education</span>
+    <span class="dot-line"></span>
+    <span class="dot-desc pc">B.Sc. (Econ. & Bus. Adm.)</span>
+    <span class="dot-desc mobile">B.Sc.</span>
+  </div>
+</div>
+
+<h2>Additional Info</h2>
+<p>My nickname Karhukarhu is Finnish and translates to Bearbear in English. I have no recall why and when I chose my nickname. There's really no story behind it.</p>
+
+<p>I like to draw and take photos. Horses are a big inspiration for me, but I draw all kinds of stuff except for comics and purely sexual potrayals. I also like to play guitar, but I do it very rarely these days. I'm more of a music listener than player really. Besides guitar, I play videogames too. Survival and simulation games being my favourite</p>
+
+<h2>Questionnaires</h2>
+<a href="/100w/" >100 Questions for Webmasters</a>,
+<a href="/100a/" >100 Questions for Artists</a>
+
+      <h2>My Other Sites</h2>
+      
+        <div class="dot-table">
+          <div class="dot-row">
+            <span class="dot-label"><a href="https://karhukarhu.net/en" target="new">karhukarhu.net</a></span>
+            <span class="dot-line"></span>
+            <span class="dot-desc">Portfolio</span>
+          </div>
+
+        <div class="dot-row">
+            <span class="dot-label"><a href="https://squish.karhukarhu.net" target="new">Squishmallows</a></span>
+            <span class="dot-line"></span>
+            <span class="dot-desc">My Squishmallows</span>
+        </div>
+
+        <div class="dot-row">
+            <span class="dot-label"><a href="https://muppi.karhukarhu.net" target="new">Muppi site</a></span>
+            <span class="dot-line"></span>
+            <span class="dot-desc">In Finnish</span>
+        </div>
+
+        <div class="dot-row">
+            <span class="dot-label"><a href="https://www.youtube.com/@Karhukarhu" target="new">Youtube</a></span>
+            <span class="dot-line"></span>
+            <span class="dot-desc">@Karhukarhu</span>
+        </div>
+
+        <div class="dot-row">
+            <span class="dot-label"><a href="https://www.twitch.tv/karhukrhu" target="new">Twitch</a></span>
+            <span class="dot-line"></span>
+            <span class="dot-desc">@Karhukrhu</span>
+        </div>
+
+        <div class="dot-row">
+            <span class="dot-label"><a href="https://www.deviantart.com/karhukarhu" target="new">Deviantart</a><span class="mobile pc">(not updated)</span></span>
+            <span class="dot-line"></span>
+            <span class="dot-desc">@Karhukarhu</span>
+        </div>
+
+        <div class="dot-row">
+            <span class="dot-label"><a href="https://karhukrhu.tumblr.com/" target="new">Tumblr</a><span class="mobile pc">(not updated)</span></span>
+            <span class="dot-line"></span>
+            <span class="dot-desc">@Karhukrhu</span>
+        </div>
+
+        <div class="dot-row">
+            <span class="dot-label"><a href="https://www.last.fm/user/Karhukarhu" target="new">Last.fm</a></span>
+            <span class="dot-line"></span>
+            <span class="dot-desc">@Karhukarhu</span>
+        </div>
+
+        <div class="dot-row">
+            <span class="dot-label"><a href="https://karhukarhu.neocities.org" target="new">Neocities</a><span class="mobile pc">(not updated)</span></span>
+            <span class="dot-line"></span>
+            <span class="dot-desc">@Karhukarhu </span>
+        </div>
+          </div>
+        <div>
+          
+          
+        <h2>Fanlistings</h2>
+
+<div class="fanlistings-design">
+<a href="https://shadow-lord.com/abandoned/" style="background-image:url(/assets/fanlistings/abandoned.png);" target="new"></a>
+<a href="https://love.in-blue-rain.org/auroras/" style="background-image:url(/assets/fanlistings/auroras.png);" target="new"></a>
+<a href="https://10-31.net/chelsea/beds/index.php" style="background-image:url(/assets/fanlistings/beds.png);" target="new"></a>
+<a href="https://beer.fanfreak.net/index.php" style="background-image:url(/assets/fanlistings/beer.png);" target="new"></a>
+  <a href="https://slytherins.com/fan/black/index.php" style="background-image:url(/assets/fanlistings/black.png);" target="new"></a>
+  <a href="https://charmed.altervista.org/blackbirds/index.php" style="background-image:url(/assets/fanlistings/blackbirds.png);" target="new"></a>
+  <a href="https://silent.am/blackholes/index.php" style="background-image:url(/assets/fanlistings/blackholes.png);" target="new"></a>
+  <a href="https://cameras.thoughtdreams.org/index.php" style="background-image:url(/assets/fanlistings/cameras.gif);" target="new"></a>
+  <a href="https://10-31.net/chelsea/castles/index.php" style="background-image:url(/assets/fanlistings/castles.png);" target="new"></a>
+  <a href="https://fan.wings.nu/crabs/index.php" style="background-image:url(/assets/fanlistings/crabs.png);" target="new"></a>
+  <a href="https://fan.after-death.org/crows/index.php" style="background-image:url(/assets/fanlistings/crows.png);" target="new"></a>
+  <a href="https://fans.thislove.nu/daisies/" style="background-image:url(/assets/fanlistings/daisies.jpg);" target="new"></a>
+  <a href="http://diehard.tanfana.net/" style="background-image:url(/assets/fanlistings/diehard.jpg);" target="new"></a>
+  <a href="https://shadow-lord.com/dinosaurs/" style="background-image:url(/assets/fanlistings/dinosaurs.png);" target="new"></a>
+  <a href="https://fan.coolcherrycream.com/doors/" style="background-image:url(/assets/fanlistings/doors.gif);" target="new"></a>
+  <a href="https://kenzicollective.altervista.org/ducks/index.php" style="background-image:url(/assets/fanlistings/ducks.png);" target="new"></a>
+  <a href="https://love.in-blue-rain.org/europe/" style="background-image:url(/assets/fanlistings/europe.png);" target="new"></a>
+  <a href="https://www.into-a-dream.com.ar/fi/index.php" style="background-image:url(/assets/fanlistings/finland.png);" target="new"></a>
+  <a href="https://fannish.net/michele/fish/index.php" style="background-image:url(/assets/fanlistings/fish.png);" target="new"></a>
+  <a href="https://nature.i-heart-you.net/forests/" style="background-image:url(/assets/fanlistings/forests.gif);" target="new"></a>
+  <a href="https://10-31.net/annie/frogs/index.php" style="background-image:url(/assets/fanlistings/frogs.png);" target="new"></a>
+  <a href="https://frost.fanfreak.net/index.php" style="background-image:url(/assets/fanlistings/frost.png);" target="new"></a>
+  <a href="https://fans.thislove.nu/ghosts/" style="background-image:url(/assets/fanlistings/ghosts.png);" target="new"></a>
+  <a href="https://fanlistings.neo-zelandaise.net/godfather/" style="background-image:url(/assets/fanlistings/godfather.jpg);" target="new"></a>
+  <a href="https://10-31.net/fans/hh/index.php" style="background-image:url(/assets/fanlistings/haunted.png);" target="new"></a>
+  <a href="http://icehockeyfans.sportsontheweb.net/index.php" style="background-image:url(/assets/fanlistings/hockey.png);" target="new"></a>
+  <a href="https://kenzicollective.altervista.org/horses/index.php" style="background-image:url(/assets/fanlistings/horses.png);" target="new"></a>
+  <a href="https://www.ladyrose.buruma.net/ledzep/index.php" style="background-image:url(/assets/fanlistings/ledzeppelin.png);" target="new"></a>
+  <a href="https://fan.single-thread.net/leon/index.php" style="background-image:url(/assets/fanlistings/leon.jpg);" target="new"></a>
+  <a href="https://love.in-blue-rain.org/london/" style="background-image:url(/assets/fanlistings/london.png);" target="new"></a>
+  <a href="http://fl.yours-to-break.net/magpies/" style="background-image:url(/assets/fanlistings/magpies.jpg);" target="new"></a>
+  <a href="https://www.into-a-dream.com.ar/lob/index.php" style="background-image:url(/assets/fanlistings/lifeof.png);" target="new"></a>
+  <a href="https://fanique.altervista.org/moon/index.php" style="background-image:url(/assets/fanlistings/moon.png);" target="new"></a>
+  <a href="http://fan.greenhype.net/mp3players/" style="background-image:url(/assets/fanlistings/mp3players.gif);" target="new"></a>
+  <a href="https://shadow-lord.com/nature/" style="background-image:url(/assets/fanlistings/nature.png);" target="new"></a>
+  <a href="https://www.into-a-dream.com.ar/nc/index.php" style="background-image:url(/assets/fanlistings/neu.png);" target="new"></a>
+  <a href="https://herotovillain.com/night/index.php" style="background-image:url(/assets/fanlistings/night.png);" target="new"></a>
+  <a href="https://thewildrose.org/oldman/index.php" style="background-image:url(/assets/fanlistings/oldman.gif);" target="new"></a>
+  <a href="https://www.into-a-dream.com.ar/orcas/index.php" style="background-image:url(/assets/fanlistings/orcas.png);" target="new"></a>
+  <a href="https://fan-a-tic.ca/otters/" style="background-image:url(/assets/fanlistings/otters.jpg);" target="new"></a>
+  <a href="https://theatregirl.net/paranormal/index.php" style="background-image:url(/assets/fanlistings/paranormal.png);" target="new"></a>
+  <a href="https://pinkfloyd.thoughtdreams.org/" style="background-image:url(/assets/fanlistings/pinkfloyd.gif);" target="new"></a>
+  <a href="https://fanlistings.melankorin.net/radiohead/" style="background-image:url(/assets/fanlistings/radiohead.png);" target="new"></a>
+  <a href="http://fan.godsandheroes.net/raven/" style="background-image:url(/assets/fanlistings/ravens3-1.png);" target="new"></a>
+  <a href="http://sakura.nu/shiba/index.php" style="background-image:url(/assets/fanlistings/shiba.png);" target="new"></a>
+  <a href="https://theatregirl.net/shining/index.php" style="background-image:url(/assets/fanlistings/shining.png);" target="new"></a>
+  <a href="https://prettylies.net/snow/index.php" style="background-image:url(/assets/fanlistings/snow.png);" target="new"></a>
+  <a href="https://into-a-dream.com.ar/sp/index.php" style="background-image:url(/assets/fanlistings/spb.jpg);" target="new"></a>
+  <a href="https://fan.winterlantern.net/squid/index.php" style="background-image:url(/assets/fanlistings/squid.gif);" target="new"></a>
+  <a href="http://fan.greenhype.net/squishmallows/" style="background-image:url(/assets/fanlistings/squishmallows.gif);" target="new"></a>
+  <a href="https://mikh.net/rickman/" style="background-image:url(/assets/fanlistings/rickman.png);" target="new"></a> 
+  <a href="https://thunder.fanfreak.net/index.php" style="background-image:url(/assets/fanlistings/thunder.png);" target="new"></a> 
+  <a href="https://love.strongisfighting.org/titanic/index.php" style="background-image:url(/assets/fanlistings/titanic.png);" target="new"></a> 
+  <a href="hhttps://10-31.net/chelsea/unicorns/index.php" style="background-image:url(/assets/fanlistings/unicorns.jpg);" target="new"></a> 
+  <a href="https://fandomsavant.com/village/index.php" style="background-image:url(/assets/fanlistings/village.png);" target="new"></a> 
+  <a href="https://whitewine.fanfreak.net/index.php" style="background-image:url(/assets/fanlistings/whitewine.png);" target="new"></a>
+  <a href="https://fan.wings.nu/witchcraft/" style="background-image:url(/assets/fanlistings/witchcraft.png);" target="new"></a>
+  <a href="http://sakura.nu/witches/index.php" style="background-image:url(/assets/fanlistings/witches.png);" target="new"></a> 
+      </div>
+    </main>
+        <div id="footer">
+      <video autoplay muted loop playsinline class="box-video">
+    <source src="/assets/fire-bg.mp4" type="video/mp4">
+  </video>
+      <div class="footer-content"><span class="footer-text">© Karhukarhu 2026</span></div>
+    
+  </div>
+</div>
+  </div>
+
+
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <span class="lightbox-next">&#10095;</span>
+    <img class="lightbox-image" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="/dropdown.js"></script>
+  <script src="/fire.js"></script>
+  <script src="/back-to-top.js"></script>
+  <script src="/backend.js"></script>
+  <script src="/comment-widget.js"></script>
+
+</body>
+</html>

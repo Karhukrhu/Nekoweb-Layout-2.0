@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    .top-menu a, .top-menu a:visited { color: #c1bdb0 !important; }
+  </style>
+
+  <link rel="stylesheet" href="/css.css">
+  <link rel="stylesheet" href="/css.css?v=202609302016">
+
+</head>
+<body>
+  
+  <canvas id="fire-canvas"></canvas>
+
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/assets/fire-bg.mp4" type="video/mp4">
+  </video>
+
+  <div id="top">
+      <nav class="top-menu">
+
+          <button class="hamburger-btn" aria-label="Open Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+
+        <ul class="main-menu-list">
+          <li><a href="/">Home</a></li>
+
+          <li><a href="#" class="dropdown-toggle">About</a>
+          
+              <ul class="dropdown-content">
+              <li><a href="/me/">Me</a></li>
+              <li><a href="/site/">Site</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="dropdown-toggle">Gallery</a>
+          
+            <ul class="dropdown-content">
+              <li><a href="/traditional/">Traditional</a></li>
+              <li><a href="/digital/">Digital</a></li>
+              <li><a href="/photos/">Photos</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#" class="dropdown-toggle">Blog</a>
+          
+          <ul class="dropdown-content">
+              <li><a href="/blog/">Home</a></li>
+              <li><a href="/blog/yearly-archive/">Archives</a></li>
+              <li><a href="/blog/tags/">Tags</a></li>
+              <li><a href="/blog/feed.xml"><svg class="rss-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 64c0-17.7 14.3-32 32-32 229.8 0 416 186.2 416 416 0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96 14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zM32 160c159.1 0 288 128.9 288 288 0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></a></li>
+            </ul>
+          </li>
+
+          <li><a href="/links/">Links</a></li>
+
+          <li><a href="#" class="dropdown-toggle">Contact</a>
+          
+            <ul class="dropdown-content">
+              <li><a href="/email/">Email</a></li>
+              <li><a href="/guestbook/">Guestbook</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+  <div id="header">
+      <div id="title-wrapper"><h1>Karhukarhu .place</h1></div>
+  </div>
+
+</div>
+
+  <div id="middle">
+    <div id="sidebar"><div id="sidebar-wrapper">
+
+    <h2>Status</h2>
+
+    <div class="clock-widget"><p class="sml">My current time is: <span id="owner-clock" class="clock-widget">Loading time...</span> (UTC+3) <span id="owner-status" class="status-widget"></span></p></div>
+
+
+                
+                <h4 id="track-label">Loading music...</h4>
+                <div class="lastfm-container">
+                    <div id="track-image"></div>
+                    <div class="lastfm-text-container">
+                        <span id="track-name"></span>
+                        <span id="track-artist"></span>
+                    </div>
+                </div>
+                
+                <h4 id="game-label">Most played</h4>
+                <div class="steam-game-container">
+                    <div id="game-icon" src="" alt="Game Icon"></div>
+                    <div class="steam-text-container">
+                        
+                        <span id="game-name">Loading...</span>
+                    </div>
+                </div>
+
+<div id="statuscafe"><div id="statuscafe-username"></div><div id="statuscafe-content"></div></div><script src="https://status.cafe/current-status.js?name=karhukarhu" defer></script>
+
+    </div></div>
+    <main class="content-area">
+      <div id="content-wrapper">
+        
+		<h2>About This Site</h2>
+  		<p>As stated on the home page, this is my reality escape from social media. I found myself doomscrolling Instagram and I wanted to put and end to it so I deleted my account. I still kinda want to have an online presence as well as a place to share my art without actively promoting it. This basically means you need a community to do that.</p>
+
+      <p>I have had a personal web page for a decade but no one finds it unless I promote it somewhere. I'm not that type of person, so nobody will ever see my art. There's Deviantart of course, but since their pretty loose policy on AI, I started to avoid that platform as well.</p>
+
+      <p>I don't really remember how I ran into indieweb community, but it all started with tinkering with Neocities. Later on I discovered Nekoweb which had better free features so I moved my site there. At these platforms I can actually be found without investing in much of marketing.</p>
+
+      <p>This all is pretty new to me, I also started blogging which I've never really done before. The site might also become over time as my little playgound with different widgets and whatnots. I'll see what I come up with! </p>
+  		
+  		
+  		
+  		
+  		  		<h2>My Buttons</h2>
+      Feel free to copy these and add to your site. Please, don't hotlink though. <br />
+  		<img class="keep-small" src="/assets/karhukarhu1.png" alt="button1" /> <img class="keep-small" src="/assets/karhukarhu2.gif" alt="button2" />
+  		
+  		
+  		
+  		
+  		<h2>Credits</h2>
+  		<p><h3>Fonts</h3>
+      
+      Heading: <a href="https://www.dafont.com/oceanside-typewriter.font" target="new">Oceanside Typewriter</a><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg>. <a href="https://www.dafont.com/jmh-typewriter-mono.font" target="new">JMH Typewriter Mono</a><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg> for the body text. And for menu and footer <a href="https://www.dafont.com/zai-olivetti-lettera-22-typewriter.font" target="new">zai Olivetti Lettera 22 Typewriter</a><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg>. <br />
+
+  <h3>Guestbook widget</h3>
+	<a href="https://virtualobserver.moe/ayano/comment-widget" target="new">Here</a><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg> <br />
+
+<h3>Like button for posts</h3> 
+
+  Made by <a href="https://aaron.com.es" target="new">Aarón</a><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg> found from <a href="https://likeslikes.net" target="new">likeslikes.net</a><svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg>.
+  <h3>Graphics</h3>
+  <a href="https://pixabay.com/videos/flame-fire-burn-burning-flaming-127967/" traget="new">Flame video</a> <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg> <br />
+  <a href="https://unsplash.com/photos/plain-beige-cardboard-or-recycled-paper-texture-qv05FvdE26k" target="new">Base for paper texture</a> <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg> texture edited to a seamless pattern.<br />
+  <a href="https://blog.spoongraphics.co.uk/freebies/6-free-high-resolution-textures-burnt-paper-edges" target="new">Burnt paper</a> <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 21 21"
+  fill="none"
+  stroke="#000"
+  stroke-width="1"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" />
+  <path d="M11 13l9 -9" />
+  <path d="M15 4h5v5" />
+</svg> edited to fit the paper texture. <br />
+
+  <h3>Please don't copy anything from my site</h3>
+  The freebies can be found above and you can download them from their respective sites.<br />
+  			
+  		<h2>Past Layouts</h2>
+
+      <div class="image-gallery">
+                    <div class="gallery-wrapper">
+        
+        <!-- 2. The Image (with your data attributes) -->
+        <div class="gallery-item" 
+             style="background-image:url(/assets/layouts/layout1_thumb.png);" 
+             data-full="/assets/layouts/layout1.png" 
+             data-caption="Layout 1.0 2026">
+        </div>
+        
+        <!-- 3. The Caption (visible on the page) -->
+        <span class="gallery-caption">1.0</span>
+        
+    </div>
+      </div> 
+      </div>
+    </main>
+        <div id="footer">
+      <video autoplay muted loop playsinline class="box-video">
+    <source src="/assets/fire-bg.mp4" type="video/mp4">
+  </video>
+      <div class="footer-content"><span class="footer-text">© Karhukarhu 2026</span></div>
+    
+  </div>
+</div>
+  </div>
+
+
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <span class="lightbox-next">&#10095;</span>
+    <img class="lightbox-image" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="/dropdown.js"></script>
+  <script src="/fire.js"></script>
+  <script src="/back-to-top.js"></script>
+  <script src="/backend.js"></script>
+  <script src="/comment-widget.js"></script>
+
+</body>
+</html>

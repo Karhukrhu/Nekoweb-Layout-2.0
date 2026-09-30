@@ -1,0 +1,2301 @@
+@font-face {
+  font-family: ocenaside; /* set name */
+  src: url(assets/oceanside.ttf); /* url of the font */
+}
+
+@font-face {
+  font-family: typewriter; /* set name */
+  src: url(assets/typewriter.ttf); /* url of the font */
+}
+
+@font-face {
+  font-family: olivetti; /* set name */
+  src: url(assets/Olivettilettera.ttf); /* url of the font */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite; 
+  background-image: url(/assets/bg.png);
+  font-family: sans-serif;
+  box-sizing: border-box;
+  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+::selection {
+    background-color: #000;
+    color:#c85e41;
+}
+
+.bg-video {
+  position: absolute;
+  left: -150px;
+  width: auto;       /* Change this to whatever size you want */
+  height: 535px; 
+  
+  /* This is the magic property: it makes the video act like background-size: cover */
+  object-fit: cover; 
+  
+  /* Pushes the video behind all other content */
+  z-index: -1; 
+}
+
+@media (max-width: 1000px) {
+    .bg-video {
+        top:0px;
+        height: 350px; 
+    }
+}
+
+@media (max-width: 700px) {
+    .bg-video {
+        top:0px;
+        height: 200px; 
+    }
+}
+
+#top {
+    display: flex;
+  width: 100%;
+}
+
+@media (max-width: 1000px) {
+    #top{
+      position: relative;
+        top:0px;
+        z-index: auto; 
+    }
+}
+
+#header {
+    background-image: url(assets/bg.png);
+    flex:1;
+    text-align: center;
+    
+}
+
+
+
+#header::before { left: 500px; }
+#header::after { right: 0; }
+
+#title-wrapper {
+background-image: url(assets/bg.png);
+  background-repeat: no-repeat;
+  max-width: 700px;
+  aspect-ratio: 700 / 575;
+  margin:0 auto;
+
+}
+
+@media (max-width: 1000px) {
+    #title-wrapper {
+        max-width:200px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 700px) {
+    #title-wrapper {
+        max-width:150px;
+    }
+}
+
+h1 {
+  font-family: ocenaside;
+  font-weight: 300;
+  font-size:50px;
+  letter-spacing:6px;
+  margin:150px auto 0 auto;
+  padding: 10px 20px ;
+  box-sizing: border-box; 
+  display: inline-block;
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        position: absolute; 
+        left: 300px; 
+        right: 20px; 
+        width: auto; 
+        margin: 75px 0 50px 0; 
+        transform: none;
+        font-size:35px;
+    }
+}
+
+@media (max-width: 700px) {
+    h1 {
+  position: absolute; 
+  left:150px;
+  font-family: ocenaside;
+  font-weight: 300;
+  font-size:30px;
+  letter-spacing:6px;
+  margin:30px auto 0 auto;
+  padding: 10px 20px ;
+  box-sizing: border-box; 
+  display: inline-block;
+    }
+}
+
+@media (max-width: 450px) {
+    h1 {
+  font-size:20px;
+    }
+}
+
+.top-menu {
+position: relative;
+  background-image: url('assets/Burn5.png'); 
+  max-height: 669px;
+  max-width: 500px;
+  font-family:olivetti;
+  color:#c1bdb0;
+  text-transform: lowercase;
+  font-size:20px;
+width: 100%;          
+    height: auto;  
+    aspect-ratio: 500 / 669;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index:auto;
+}
+
+@media (max-width: 1000px) {
+    .top-menu {
+        max-width:300px;
+    }
+}
+
+@media (max-width: 700px) {
+    .top-menu {
+        max-width:150px;
+        background-image: url('assets/Burn5_600.png'); 
+        z-index:auto;
+    }
+}
+
+.top-menu > ul {
+    position:absolute;
+    top:25px;
+    left:100px;
+    margin:0;
+    padding:0;
+    counter-reset: main-item; 
+}
+
+@media (max-width: 1000px) {
+    .top-menu > ul {
+    position:absolute;
+    top:20px;
+    left:60px;
+    }
+}
+
+.top-menu li {
+    list-style: upper-roman;
+    padding:10px 0;
+    margin:0;
+}
+
+@media (max-width: 1000px) {
+    .top-menu li {
+    padding:5px 0;
+    }
+}
+
+/* 1. The Link: Gets the full border and acts as an anchor */
+.top-menu a, .top-menu a:visited {
+    display: inline-block;
+    position: relative; /* CRITICAL: This makes the link the "anchor" for the flame */
+    color: inherit;
+    text-decoration: none;
+    font-size:26px;
+    letter-spacing: 3px;
+    padding: 3px 4px 3px 7px; 
+    line-height: 0.7;
+    text-shadow:0px 0px 7px #000;
+    transition: all 0.2s;
+}
+
+@media (max-width: 1000px) {
+    .top-menu a, .top-menu a:visited  {
+        padding: 0px; 
+        font-size:20px;
+    }
+}
+
+/* 2. The Hover State: Adds the full border around the text */
+.top-menu a:hover {
+    transform: translate(5px, 0);
+
+}
+
+/* 1. The Dropdown Container */
+/* 1. The Container (No border-left here anymore!) */
+.top-menu .dropdown-content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease-out;
+  
+  margin-left: 25px;              
+  padding-left: 20px;             
+}
+
+@media (max-width: 1000px) {
+    .top-menu .dropdown-content  {
+        margin-left: 20px;              
+        padding-left: 15px; 
+    }
+}
+
+.top-menu .dropdown-content.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* 2. The List Items (Smaller spacing) */
+.top-menu .dropdown-content li {
+  position: relative; 
+  padding: 4px 0;    
+  list-style: none;
+}
+
+@media (max-width: 1000px) {
+    .top-menu .dropdown-content li  {
+        padding: 2px 0;  
+    }
+}
+
+/* 3. The Horizontal Branch (Unchanged) */
+.top-menu .dropdown-content li::before {
+  content: "";
+  position: absolute;
+  left: -30px;        
+  top: 50%;           
+  width: 30px;        
+  border-top: 2px solid #c1bdb0; 
+}
+
+/* 4. The Vertical Segments (The Magic Fix) */
+.top-menu .dropdown-content li::after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  
+  /* Starts at the middle of the PREVIOUS item */
+  top: -50%; 
+  
+  /* Goes down to the middle of the CURRENT item */
+  height: 100%; 
+  
+  border-left: 2px solid #c1bdb0; 
+}
+
+/* 5. Fix the very first item so it doesn't draw a line into empty space above */
+.top-menu .dropdown-content li:first-child::after {
+  top: 0;
+  height: 50%;
+}
+
+/* 6. The Links */
+.top-menu .dropdown-content li a {
+  display: block;
+  text-decoration: none;
+  color: #c1bdb0;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+
+
+.top-menu .dropdown-content li a:hover {
+  transform: translate(5px, 0);
+}
+
+@media (max-width: 1000px) {
+
+  /* 1. The Container: Padding MUST match the left offset of the lines */
+  .top-menu .dropdown-content {
+    margin-left: 20px;              
+    padding-left: 20px; /* CRITICAL: This creates the track for the lines */
+  }
+
+  /* 2. The List Items */
+  .top-menu .dropdown-content li {
+    position: relative; 
+    padding: 2px 6px;  
+    list-style: none;
+    font-size: 14px;
+  }
+
+  /* 3. The Horizontal Branch */
+  .top-menu .dropdown-content li::before {
+    content: "";
+    position: absolute;
+    left: -20px; /* MUST exactly match the 20px padding above */
+    top: 50%;           
+    width: 15px;        
+    border-top: 1px solid #c1bdb0; 
+  }
+
+  /* 4. The Vertical Segments */
+  .top-menu .dropdown-content li::after {
+    content: "";
+    position: absolute;
+    left: -20px; /* MUST exactly match the 20px padding above */
+    top: -50%; 
+    height: 100%; 
+    border-left: 1px solid #c1bdb0; 
+  }
+
+  /* 5. Fix the very first item */
+  .top-menu .dropdown-content li:first-child::after {
+    top: 0;
+    height: 50%;
+  }
+
+  .top-menu .dropdown-content li a {
+  font-size: 16px;
+}
+
+
+}
+
+.hamburger-btn {
+  display: none; /* Hidden on desktop */
+}
+
+/* --- MOBILE (Under 600px) --- */
+@media (max-width: 1000px) {
+  
+  /* 1. Show and style the hamburger button */
+  .hamburger-btn {
+    display: block;
+    position: absolute;
+    top: 125px;
+    left: 80px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000000 !important;
+    width: 50px;
+    height: 35px;
+  }
+
+  /* Draw the 3 lines of the hamburger */
+  .hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #c1bdb0; /* Matches your menu text color */
+    margin-bottom: 7px;
+    transition: all 0.3s ease;
+    z-index: 9999999;
+  }
+
+  /* 2. Hide the normal menu by default on mobile */
+  .top-menu .main-menu-list {
+    display: none; 
+    
+  }
+  .top-menu a, .top-menu a:visited {
+    font-size:26px;
+}
+
+  /* 3. When the button is clicked, show the menu in mobile mode */
+ #top .top-menu .main-menu-list.mobile-active {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;          /* Keeps them perfectly centered VERTICALLY */
+    align-items: flex-start !important; /* CHANGED: Aligns them to the LEFT edge */
+    
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background-color: #000 !important;
+    
+    /* CHANGED: 30px padding on the left, 20px on the other sides */
+    padding: 20px 20px 20px 100px !important; 
+    
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 100 !important; 
+  }
+
+  /* Optional: Add a little breathing room between the main links */
+  .top-menu .main-menu-list.mobile-active > li {
+    margin: 15px 0;
+  }
+
+
+  /* Optional: Turn the hamburger into an 'X' when open */
+  .hamburger-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .top-menu .main-menu-list.mobile-active .dropdown-content {
+    margin-left: 20px;      /* Indents the whole submenu block */
+    padding-left: 20px;     /* Creates the track for the vertical line */
+    margin-top: 10px;       /* Adds a little space below the main link (e.g., "II. about") */
+  }
+
+  /* 2. The List Items: Anchor for the lines */
+  .top-menu .main-menu-list.mobile-active .dropdown-content li {
+    position: relative;     /* CRITICAL: Allows absolute positioning of the lines */
+    padding: 10px 5px;
+    list-style: none;
+  }
+
+  /* 3. The Horizontal Branch */
+  .top-menu .main-menu-list.mobile-active .dropdown-content li::before {
+    content: "";            /* CRITICAL: Must be empty, not "-" */
+    position: absolute;
+    left: -20px;            /* Pulls it back into the padding track */
+    top: 50%;
+    width: 20px;
+    border-top: 2px solid #c1bdb0; 
+  }
+
+  /* 4. The Vertical Segments */
+  .top-menu .main-menu-list.mobile-active .dropdown-content li::after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: -50%;
+    height: 100%;
+    border-left: 2px solid #c1bdb0; 
+  }
+
+  /* 5. Fix the very first item so the line doesn't stick up into empty space */
+  .top-menu .main-menu-list.mobile-active .dropdown-content li:first-child::after {
+    top: 0;
+    height: 50%;
+  }
+
+  .top-menu .dropdown-content li a {
+  font-size: 20px;
+}
+  
+}
+
+@media (max-width: 700px) {
+  .hamburger-btn {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000000 !important;
+    width: 40px;
+    height: 25px;
+  }
+
+  /* Draw the 3 lines of the hamburger */
+  .hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #c1bdb0; /* Matches your menu text color */
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+    z-index: 9999999;
+  }
+  }
+
+
+body.no-scroll {
+  overflow: hidden; /* Disables the scrollbar */
+  height: 100vh;    /* Prevents the page from bouncing on iOS devices */
+}
+
+
+/*CONTENT*/
+
+#middle {
+    display: grid;
+    grid-template-columns: 500px 1fr; 
+    
+    /* ADD THIS LINE BACK! It's the magic that pushes the footer down */
+    grid-template-rows: 1fr auto; 
+    
+    max-width: 1498px; 
+    margin: 0 auto; 
+    width: 100%;
+    background-image: url(/assets/bg.png);
+    flex: 1; 
+}
+
+@media (max-width: 1500px) {
+    #middle {
+        grid-template-columns: 500px 1fr;
+        max-width: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    #middle {
+        grid-template-columns: 270px 1fr;
+        position: relative;
+    }
+}
+
+@media (max-width: 700px) {
+    
+    /* 1. Force #middle to stretch to the bottom of the screen */
+    #middle {
+        display: flex !important; /* Flex is much better than block/grid for sticky footers */
+        flex-direction: column;
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    /* 2. Hide the sidebar */
+    #sidebar { display: none; }
+
+    /* 3. CRITICAL: Reset the content area so it stops pulling the footer up! */
+    #middle .content-area {
+        /* RESET the negative margins from the 1000px rule */
+        margin-top: 0 !important; 
+        margin-bottom: 0 !important; 
+        margin-left: 0 !important; 
+        
+        /* Make the text stretch to push the footer down */
+        flex: 1; 
+        
+        /* Centering and sizing */
+        max-width: 95%; 
+        margin: 0 auto;
+        padding-bottom: 50px; 
+        position: relative;
+    }
+
+    /* 4. Reset the footer so it sits perfectly at the bottom */
+    #middle #footer {
+        /* RESET any weird margins */
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 5. Keep the burnt paper and video sized correctly for mobile */
+    .footer-content {
+        background-image: url(assets/footer_600.png);
+        max-width: 305px; 
+        height: auto; 
+        aspect-ratio: 998 / 510; 
+        margin: 0 auto;
+    }
+
+    .box-video {
+        max-width: 305px; 
+        aspect-ratio: 998 / 510;
+    }
+}
+
+#sidebar {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 500px;
+}
+
+@media (max-width: 1000px) {
+    #sidebar{
+        max-width:300px;
+    }
+}
+
+.content-area {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    width: 100%; 
+    max-width: 700px; 
+    margin: 0 auto; 
+    justify-self: auto; 
+    font-family: typewriter;
+    font-size: 13px;
+    z-index: 10;
+    align-self: start; 
+    margin-top: -300px; 
+    margin-bottom: 50px; 
+
+}
+
+@media (max-width: 1000px) {
+
+    #middle .content-area {
+      position: relative;
+              margin-top: -200px; 
+              margin-bottom: -25px;
+              z-index: 9!important;
+    }
+    
+    #middle #footer {
+      margin-top: 0px;
+    }
+    .content-area, #footer {
+        /* 1. Make them span across the whole layout */
+        grid-column: 1 / -1; 
+        
+        /* 2. Set your exact starting and ending points */
+        margin-left: 250px;  /* Starts 20px from the left edge of the screen */
+        margin-right: 20px; /* Ends 20px from the right edge */
+        
+        /* 3. Let them stretch to fill that space */
+        width: auto;
+        max-width: none; /* Removes the 700px/998px caps */
+        
+        /* 4. Keep your existing vertical spacing */
+
+        transform: none;
+        position: relative;
+    }
+}
+
+@media (max-width: 700px) {
+    #middle .content-area {
+        /* 1. Put it back in the normal flow so it takes up space */
+        position: relative; 
+        
+        /* 2. Reset the absolute anchors */
+        left: auto;
+        right: auto;
+        
+        /* 3. Center it and give it a safe width */
+        max-width: 95%; 
+        margin: 0 auto;
+        
+        /* 4. Add a little padding so the footer doesn't cover the last words */
+        padding-bottom: 50px; 
+    }
+}
+
+.content-area a, .content-area a:visited {
+  color:#c85e41;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+border-bottom: 3px solid transparent;
+padding:2px 5px 0px 5px; 
+transition: all 0.2s;
+line-height: 0.7;
+}
+
+.content-area a:hover, .content-area a:active {
+border-bottom: 3px solid rgba(200, 94, 65, 0.7);
+ background-color: rgba(200, 94, 65, 0.3);
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ padding:2px 5px 0px 5px; 
+}
+
+#content-wrapper {
+    background-position: center;
+    padding:0 20px;
+    z-index:10000;
+
+}
+
+
+h2 {
+display: block;
+    position: relative;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin:50px 0 10px 0;
+    font-family: olivetti;
+    font-size:35px;
+
+}
+
+@media (max-width: 700px) {
+    h2 {
+        font-size:30px;
+    }
+}
+
+@media (max-width: 450px) {
+    h2 {
+        font-size:25px;
+    }
+}
+
+h3 {
+  line-height: 0.7;
+  text-transform: uppercase;
+  padding:0;
+  font-size:15px;
+  margin:20px 0 0 0;
+}
+
+h4 {
+  background-color: rgba(200, 94, 65, 0.7);
+  line-height: 0.7;
+  text-transform: uppercase;
+  padding:6px 10px 3px 10px;
+  font-size:17px;
+  letter-spacing: 1px;
+  font-family: olivetti;
+  margin:15px 0 0 0;
+}
+
+@media (max-width: 450px) {
+    h3 {
+        font-size:14px;
+    }
+}
+
+p::first-letter {
+    float: left;
+    font-size: 1.6em; 
+    line-height: 0.6;
+    margin-right: 7px; 
+    margin-top: 3px;
+    color:#c85e41;
+    padding:5px 5px 3px 5px;
+    border:3px solid rgba(200, 94, 65, 0.7);
+    
+}
+
+p.sml::first-letter {
+  float:none;
+  color:inherit;
+  font-size:inherit;
+  line-height:1.2;
+  margin:0;
+  padding:0;
+  border:0px;
+}
+
+
+.dot-table {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.dot-row {
+  display: flex;
+  align-items: baseline; 
+  font-size:15px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 700px) {
+    .dot-row {
+        font-size:13px;
+    }
+}
+.dot-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap; 
+}
+
+
+.dot-line {
+  flex-grow: 1; 
+  border-bottom: 1px dotted #2d300e;
+  margin: 0 6px; 
+  position: relative;
+  top: -3px; 
+}
+
+.dot-desc {
+  white-space: nowrap; 
+}
+
+@media (max-width: 700px) {
+.pc {
+    display:inline-block;
+}
+.mobile {
+    display:none;
+}
+
+}
+
+.updates {
+  max-height:300px;
+	overflow: auto;
+  padding:5px 5px 5px 5px;
+  margin:0px;
+  border: 3px solid rgba(200, 94, 65, 0.7);
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.update {
+    display: flex;
+    gap: 15px; 
+    margin-bottom: 10px;
+    
+    /* 1. Aligns both columns to the very top so they start on the same row */
+    align-items: flex-start; 
+}
+
+.update-date {
+    /* 2. Give the left column a fixed width (adjust 100px to fit your dates) */
+    width: 100px; 
+    flex-shrink: 0; /* Prevents the date from squishing if the screen gets small */
+    letter-spacing: 2px;
+    
+    /* Make sure there is no margin pushing it down! */
+    margin-top: 0; 
+}
+
+.update-content {
+    /* 3. Makes the right column take up ALL the remaining space */
+    flex: 1; 
+    
+    display: flex;
+    flex-direction: column; 
+    gap: 8px;
+}
+
+.update-desc {
+    font-size: 12px;
+    font-weight: 300;
+    margin: 0; /* Resets default browser margins for perfect alignment */
+}
+
+
+.q-item {
+  display: flex;
+  gap: 15px; 
+  margin-bottom: 25px;
+  align-items: flex-start; 
+}
+
+
+.q-num {     
+  flex-shrink: 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 20px; 
+}
+
+.q-content {
+  display: flex;
+  flex-direction: column; 
+  gap: 8px;
+}
+
+.question {
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-size:15px;
+  margin: 20px 0 0 0;
+}
+
+
+.q-answer {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+
+a.site-button {
+    display: inline-block;
+    width:88px;
+    height:31px;
+    background-blend-mode:multiply;background-color:#c1bdb0;
+    padding: 0px;
+    margin: 2px;
+    border:0px;
+
+}
+
+a.site-button:hover {
+    display: inline-block;
+    width:88px;
+    height:31px;
+    background-blend-mode:normal;
+    padding: 0px;
+    border:0px;
+}
+
+
+.fanlistings-design {
+    font-size: 0; 
+    text-align: center;
+    line-height: 0;
+}
+
+.content-area .fanlistings-design a {
+    display:inline-block;
+width:50px;
+height:50px;
+background-blend-mode:multiply;background-color:#c1bdb0;
+padding:0px;
+margin:2px;
+border:0px;
+}
+
+.content-area .fanlistings-design a:hover {
+background-color: transparent;
+border:0px;
+padding:0px;
+}
+
+
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+}
+
+.gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; /* Shows the hand cursor */
+}
+
+.gallery-item {
+    display: inline-block;
+    width:75px;
+    height: 75px;
+    background-repeat: no-repeat;
+    background-color: #c1bdb0;
+    background-blend-mode: multiply;
+    margin:2px;
+}
+
+.gallery-item:hover {
+    width:75px;
+    height: 75px;
+    background-blend-mode: normal;
+    cursor: pointer;
+    
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+    z-index: 10000000!important;
+}
+
+.lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-image {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.lightbox-close, .lightbox-prev, .lightbox-next {
+    position: absolute;
+    color: #c1bdb0;
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s ease;
+    z-index: 10000001!important;
+}
+
+.lightbox-close { top: 20px; right: 40px; }
+.lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+    color: #aaa;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 11px;
+    font-family: typewriter;
+	color:#000;
+	background-color: #c1bdb0;
+  background-image: url(/assets/bg.png);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding:10px 7px 7px 10px;
+	font-weight: normal !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/*BLOGG*/
+
+.warning {
+  display: inline-block; 
+  width:15px;
+  height:15px;
+  vertical-align: -0.15em;
+  fill: currentColor; 
+}
+
+
+.button-wrapper {
+  width:100%;
+  text-align: right;
+}
+
+.like-button {
+    /* Layout & Spacing */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    padding: 10px 5px 10px 6px;
+    
+    /* FIX: Add fixed dimensions to prevent resizing */
+    min-width: 10px;
+    height: 21px;
+    
+    /* Appearance */
+    background-color: rgba(200, 94, 65, 0.3);
+    border: 3px solid rgba(200, 94, 65, 0.7);
+    
+    /* Typography */
+    font-family: inherit;
+    font-size: 12px;
+    color: #c85e41;
+    line-height: 1;
+  }
+  
+  /* Hover state */
+  .like-button:hover {
+    background-color: rgba(200, 94, 65, 0.3);
+    border: 3px solid rgba(200, 94, 65, 1);
+    color: #c85e41; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  /* Active/Clicked state */
+  .like-button:active {
+    transform: translateY(0);
+  }
+  
+  /* Disabled state (already liked) */
+  .like-button:disabled {
+    background-color: transparent;
+    color: #c85e41; 
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+    .like-button:disabled:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.0);
+    border: 3px solid rgba(200, 94, 65, 0.7);
+  }
+  
+  /* The heart icon container */
+  .like-heart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    flex-shrink: 0;
+  }
+  
+  /* The SVG heart itself */
+  .heart-svg {
+    width: 13px;
+    height: 13px;
+    display: block;
+  }
+  
+  /* Style for the outline heart */
+  #heart-outline {
+    stroke: rgba(200, 94, 65, 0.7);
+  }
+  
+  /* Hover state for outline heart */
+  .like-button:hover #heart-outline {
+    stroke: #c85e41;
+  }
+  
+  /* The count number */
+  .like-count {
+    font-weight: 300;
+    min-width: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2px;
+  }
+
+
+.post-list-wrapper {
+  margin-bottom:30px;
+}
+
+.post-header {
+  display: flex;
+  align-items: baseline; 
+  gap: 0px; 
+  flex-wrap: wrap; 
+  padding: 5px 0;
+}
+
+@media (max-width: 700px) {
+.post-header {
+  display: block;
+}
+}
+
+.post-title {
+    max-width: 400px; 
+  min-width: 0; 
+  flex-shrink: 1; 
+  white-space: nowrap;      
+  overflow: hidden;       
+  text-overflow: ellipsis;
+  padding:inherit;
+}
+
+@media (max-width: 1100px) {
+.post-title {
+    max-width: 290px; 
+}
+}
+
+@media (max-width: 1000px) {
+.post-title {
+    max-width: 225px; 
+}
+}
+
+@media (max-width: 700px) {
+.post-title {
+  display: block;
+    max-width: 250px; 
+}
+}
+
+.content-area a.post-title {
+  font-weight: 600;
+  padding:inherit;
+  line-height: 0.7;
+}
+
+.post-date {
+ margin-left: auto; 
+ opacity:0.5;
+ font-style: italic;
+}
+
+@media (max-width: 700px) {
+.post-date {
+    display:block;
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+}
+
+.content-area .lightbox {
+  /* Reset all positioning so it doesn't stick to the corners */
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  z-index: auto !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* 2. Ensure the wrapper centers it perfectly */
+.img-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Failsafe centering */
+  margin: 30px auto;
+}
+
+/* 3. Style the actual image inside the link */
+.content-area a.lightbox {
+  background-color: transparent !important;
+  background-image: none !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: inline-block !important;
+}
+
+/* 2. Your existing image rule */
+.content-area a.lightbox img.blog-img {
+  display: block;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto; 
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+a.lightbox img.blog-img:hover {
+  transform: scale(1.02);
+}
+
+.img-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the group as a whole */
+  gap:5px;
+  margin: 30px 0;
+  padding: 0 !important;
+}
+
+/* 2. The Individual Blocks */
+.img-row .img-center {
+  /* '0 0 auto' stops them from stretching and leaving weird gaps */
+  flex: 0 0 auto !important; 
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
+/* 3. The Link */
+.img-row a.lightbox {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+}
+
+/* 4. The Image */
+.img-row img.blog-img {
+  display: block;
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  /* THIS IS THE KEY: Removes the 3px border that was pushing them apart! */
+  border: none !important; 
+  
+  width: 100%;
+  max-width: 300px; /* Adjust this to control how big the side-by-side images are */
+}
+
+
+
+
+/* For mobile: stack images vertically */
+@media (max-width: 600px) {
+  .img-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .img-row .img-center {
+    max-width: 100%;
+  }
+}
+
+
+
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+/* 1. Target the EXACT classes used in your HTML: "nav-link" */
+.post-navigation a.nav-link {
+  /* Force it to be inline-block so vertical padding actually renders */
+  display: inline-block !important;
+  
+  /* Match your global link padding */
+  padding: 2px 5px 0px 5px !important;
+  
+  /* OVERRIDE the crushing 0.7 line-height from .content-area a */
+  line-height: 1.2 !important; 
+  
+  margin: 0 !important;
+}
+
+/* 2. Keep your width constraints using the correct classes */
+.post-navigation a.nav-link.prev {
+  text-align: left;
+  max-width: 45%; 
+}
+
+.post-navigation a.nav-link.next {
+  text-align: right;
+  max-width: 45%;
+  margin-left: auto; 
+}
+
+
+.pagination-nav a {
+  display: inline-block !important;
+  padding: 2px 5px 0px 5px !important; /* Match your global link padding */
+  line-height: 1.2 !important; /* Prevents the 0.7 line-height from crushing the padding */
+  margin: 0 5px !important; /* Adds a little space between numbers/links */
+}
+
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Slightly larger gap for bigger text */
+  margin-top: 20px;
+  align-items: center; 
+}
+
+a.tag-item, a.tag-item:visited {
+  display: inline-block !important;
+  padding: 2px 5px 0px 5px !important; /* Match your global link padding */
+  line-height: 1.2 !important; /* Prevents the 0.7 line-height from crushing the padding */
+  margin: 0 5px !important; /* Adds a little space between numbers/links */
+}
+
+.tag-count {
+  font-size: 0.75em; /* This makes the (count) always 75% of the main text size */
+  opacity: 0.8;
+  margin-left: 4px;
+}
+
+
+
+/*BLOG COMMENTS*/
+
+
+#c_widget {
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+    background-attachment: fixed;
+    font-size: 12px;
+    color: #000;
+    font-family: typewriter;
+}
+
+.c-form-row {
+  display: grid;
+  /* 160px for the label, the rest of the space for the input */
+  grid-template-columns: 100px 1fr; 
+  gap: 15px; /* Space between label and input */
+  align-items: center; /* Vertically centers them if heights differ */
+}
+
+/* 2. Align labels to the left */
+.content-area .c-form-row .c-label {
+  text-align: left; 
+  font-weight: bold; /* Optional: makes labels stand out */
+  font-size: 13px;
+}
+
+/* 3. Constrain the inputs so they don't stretch across the whole screen */
+.c-form-row .c-input {
+  width: 100%;
+  max-width: 300px; /* Adjust this to make inputs wider or narrower */
+  padding: 5px;
+  font-family: inherit;
+}
+
+.content-area .c-form-row .c-input.c-textInput {
+  width: 100%;
+  max-width: 100%;
+  padding: 5px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+textarea#c-message.c-input {
+  max-width:100%;
+  box-sizing: border-box !important; 
+}
+
+/* 4. Make the textarea sit in the second column */
+.c-form-row textarea.c-input {
+  grid-column: 2; /* Forces it to start under the other inputs */
+  height: 100px;
+  resize: vertical; /* Allows user to drag it taller */
+}
+
+/* 5. Align the Submit button nicely */
+.c-button-wrapper {
+  display: flex;
+  justify-content: flex-end; /* Pushes button to the right */
+  margin-top: 10px;
+}
+
+#c_submitButton {
+  /* Match your site's button styling */
+  background-color: rgba(200, 94, 65, 0.3);
+  border: 3px solid rgba(200, 94, 65, 0.7);
+  color: #c85e41;
+  padding: 5px 15px;
+  font-family: typewriter;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#c_submitButton:hover {
+  background-color: rgba(200, 94, 65, 0.5);box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);;
+}
+
+
+#c_widget button, #c_widget input[type=submit] {
+    padding:10px 7px 6px 10px;
+    font-size: 10px;
+    text-decoration: none;
+	text-align: center;
+    text-transform: uppercase;
+    background-color: rgba(200, 94, 65, 0.3);
+    color: #432d14;
+    border: 3px solid rgba(200, 94, 65, 0.7);
+    font-family: typewriter;
+}
+#c_widget button:hover, #c_widget input[type=submit]:hover {
+    color: #432d14;
+    background-color: rgba(200, 94, 65, 0.3);
+    border: 3px solid rgba(200, 94, 65, 1);
+}
+#c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity:0.6;}
+#c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
+    color: #432d14;
+    border: 3px solid rgba(200, 94, 65, 0.7);
+    opacity:0.6;
+}
+
+#c_textWrapper .c-label {
+  align-self: start !important; 
+  margin-top: 8px !important; /* Optical tweak: matches the first line of text inside the box */
+}
+
+#c_inputDiv {
+    margin-bottom: 15px;
+}
+
+#c_widgetTitle {
+ 	margin-top:35px;
+	text-align: center;
+	color:#2d300e;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.c-inputWrapper {
+    text-align: right;
+}
+.c-input {
+    padding: 4px;
+    color: black;
+    background-color: rgba(200, 94, 65, 0.3);
+	outline: none;
+	border:1px solid transparent;
+	margin:5px 0px;
+	border: 3px solid rgba(200, 94, 65, 0.7);
+  font-family: typewriter;
+}
+.c-input:focus {border: 3px solid rgba(200, 94, 65, 1);box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);}
+
+#c_submitButton {
+    display: block; 
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+button#c_submitButton {
+    padding:10px 7px 6px 10px;
+    font-size: 12px;
+    text-decoration: none;
+	text-align: center;
+    text-transform: uppercase;
+    background-color: rgba(200, 94, 65, 0.3);
+    color: #432d14;
+    border: 3px solid rgba(200, 94, 65, 0.7);
+    font-family: typewriter;
+}
+
+button#c_submitButton:hover {
+    color: #000;
+    background-color: rgba(200, 94, 65, 0.3);
+    border: 3px solid rgba(200, 94, 65, 0.7);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+#c_replyingText {
+	margin-top:5px;
+    color: #70480d;
+    text-align: right;
+}
+
+/* Comment section */
+
+#approved-comments {
+  margin-top:50px;
+}
+
+.c-comment {
+    margin: 10px 0px 50px 0px;
+    padding: 0px 0px;
+}
+.c-reply {
+    display: block;
+    width: 100%; 
+    margin-top:-40px;
+    margin-bottom: -40px;
+    margin-right: 0;
+    padding: 10px;
+}
+
+.c-reply:last-child {margin-bottom: 0;}
+
+.c-replyname {
+  font-size:12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.c-replytext-wrapper {
+  display:flex;
+  gap:10px;
+  align-items: center; 
+  height:100%;
+}
+
+.c-replytext {
+  display: inline-block;
+}
+
+.c-replytext-arrow {
+  display: inline-block;
+  font-size:25px;
+}
+
+.c-name {
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+    padding: 0;
+    font-size:12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+.c-site {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #B766FF;
+}
+
+.c-timestamp {
+    float: right;
+     opacity:0.5;
+ font-style: italic;
+}
+
+@media (max-width: 700px) {
+    
+.c-timestamp {
+  display: block;
+    float: none;
+    margin-left:0;
+
+}
+    }
+
+
+
+/* 1. Add this new wrapper class */
+.c-reply-wrapper {
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+/* 3. The Header Row */
+.c-reply-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px; 
+    padding-left:28px;
+}
+
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2px; 
+    padding-left:28px;
+}
+
+@media (max-width: 700px) {
+    
+.c-reply-header {
+  display: block;
+    padding-left:28px;
+
+}
+    }
+
+/* 3. Update .c-reply (Remove width/margin-left, keep padding) */
+.c-reply {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    padding: 0px; 
+    
+    /* ADD THIS: Pushes the visual center down to align with the text box */
+    padding-bottom: 20px; 
+    
+}
+
+/* 4. Your existing .c-replyContainer stays exactly the same! */
+.c-replyContainer {
+    display: flex !important; 
+    align-items: center; 
+    margin-top: 10px;
+
+}
+.c-reply .c-name {
+  margin-left:28px;
+}
+
+.c-reply p.c-text {
+  display:inline-block;
+  margin-left:0px;
+}
+
+#c_widget #c_leftButton, #c_widget #c_rightButton {
+  padding:2px;
+  line-height: 0;
+}
+
+/* Pagination container - spread buttons to opposite ends */
+#c_pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+/* Previous button - all the way to the left */
+.c-paginationLeft {
+    margin-right: auto;
+}
+
+/* Next button - all the way to the right */
+.c-paginationRight {
+    margin-left: auto;
+}
+
+/* Style the SVG arrows */
+.c-paginationButton svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+/* Optional: Add hover effects */
+.c-paginationButton:hover:not(:disabled) {
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Optional: Style disabled buttons */
+.c-paginationButton:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+
+/*SIDEBAR */
+
+#sidebar-wrapper {
+  position:absolute;
+  left:40px;
+  width:350px;
+  margin: 0px 0px;
+  font-family: typewriter;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+    
+#sidebar-wrapper {
+  position:absolute;
+  left:20px;
+  width:210px;
+}
+}
+
+.lastfm-container,
+.steam-game-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 5px;
+  margin: 0px auto 5px auto;
+
+  border: 3px solid rgba(200, 94, 65, 0.7);
+  box-sizing: border-box; 
+  overflow: hidden; 
+  width: 100%; 
+  min-width: 0; 
+  font-family: typewriter;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#track-image {
+  width: 45px; 
+  height: 45px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: none; 
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: brightness(0.9);
+}
+
+#track-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.lastfm-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  flex: 1;
+}
+
+
+
+#track-name {
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 1px;
+  font-size:15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 1000px) {
+    
+#track-name {
+
+  font-size:13px;
+}
+
+#sidebar-wrapper #track-artist {
+  font-size: 12px;
+}
+}
+
+#track-artist {
+  color: #000;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+#game-icon {
+  width: 45px; 
+  height: 45px;
+  border-radius: 4px;
+  margin-right:0px;
+  background-color:#d1b48d;
+  flex-shrink: 0;
+  background-size: cover;       
+  background-position: center;   
+  background-repeat: no-repeat;
+  display: none; 
+  background-blend-mode: multiply;
+}
+
+#game-icon:hover {
+  background-blend-mode: normal;
+}
+
+.steam-text-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  min-width: 0; 
+}
+
+
+
+#game-name {
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 1px;
+  font-size:15px;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+}
+
+@media (max-width: 1000px) {
+    
+#game-name {
+  font-size:13px;
+}
+}
+
+/* The hover effect */
+
+
+.steam-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.steam-loading, .steam-error {
+  color: #000;
+  font-style: italic;
+}
+
+
+.auto-marquee {
+  display: inline-block !important;
+  width: max-content !important; /* Lets the text be as wide as it naturally needs to be */
+  animation: scroll-perfect 8s linear infinite alternate !important;
+}
+
+/* 4. The Perfect Scroll Animation */
+@keyframes scroll-perfect {
+  0% { transform: translateX(0); }
+  /* Scrolls exactly the distance calculated by the JS below */
+  100% { transform: translateX(var(--scroll-distance, -50%)); } 
+}
+
+
+
+#statuscafe {
+  padding: 0px 0px 0px 0;
+  margin: 15px auto 5px auto;
+
+  border: 3px solid rgba(200, 94, 65, 0.7);
+  box-sizing: border-box; 
+  overflow: hidden; 
+  width: 100%; 
+  min-width: 0; 
+  font-family: typewriter;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+#statuscafe-username {
+  background-color: rgba(200, 94, 65, 0.7);
+  line-height: 0.7;
+  text-transform: uppercase;
+  padding:4px 0px 5px 0px;
+  font-size:15px;
+  letter-spacing: 1px;
+  font-family: olivetti;
+  margin:0px 0 0 0;
+}
+
+#statuscafe a, #statuscafe a:visited {
+  color:#000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-size:17px;
+border-bottom: 3px solid transparent;
+padding: 2px 5px 0px 5px; 
+transition: all 0.2s;
+line-height: 0.7;
+}
+
+#statuscafe a:hover, #statuscafe a:active {
+border-bottom: 3px solid rgba(200, 94, 65, 0.7);
+ background-color: rgba(200, 94, 65, 0.3);
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+ padding:2px 5px 0px 5px; 
+}
+
+#statuscafe-content {
+    margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+#middle #footer {
+    grid-column: 2; 
+    grid-row: 2;
+    position: relative; 
+    bottom:0px;
+    width: 100%; 
+    margin: -200px 0 0px 0;
+    text-align: center;
+    padding: 0;
+    z-index: 0;
+    overflow: hidden; 
+}
+
+@media (max-width: 1000px) {
+    #middle #footer {
+    margin-top: -300px!important;
+    }
+}
+
+@media (max-width: 700px) {
+    
+    /* 1. Fix the Footer Container */
+    #middle #footer {
+        /* CRITICAL: Reset the 250px left margin from the 1000px rule! */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: -350px!important;
+        
+        /* Make it full width and centered */
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 2. Fix the Burnt Paper Image Size */
+    .footer-content {
+        background-image: url(assets/footer_600.png);
+        max-width: 305px; /* Keep your desired width */
+        
+        /* CRITICAL: Remove the fixed 510px height! */
+        height: auto; 
+        
+        /* Use aspect ratio to keep the shape correct without being huge */
+        aspect-ratio: 998 / 510; 
+        
+        margin: 0 auto; /* Center the image inside the footer */
+    }
+
+    /* 3. Fix the Video inside the footer */
+    .box-video {
+        max-width: 305px; /* Match the footer content width */
+        aspect-ratio: 998 / 510;
+    }
+}
+
+#footer::before, #footer::after {
+  display: none;
+    position: absolute;
+    content: "";
+    background-image: url(assets/bg.png);
+    width: calc((100% - 998px) / 2);
+    height: 100%;
+    top: 0;           
+    z-index: 4;
+
+}
+
+#footer::before { left: 0; }
+#footer::after { right: 0; }
+
+.box-video {
+  position: absolute;
+  bottom: 0; /* Must be bottom: 0 to stay in the hole */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 998px; 
+  
+  /* REPLACE height: auto with this: */
+  aspect-ratio: 998 / 510; 
+  
+  object-fit: cover;
+  z-index: 2;
+}
+
+
+
+
+/* The Burnt Paper: Constrained and centered */
+.footer-content {
+    position: relative;
+    width: 100%;
+    max-width: 998px; /* Prevents stretching */
+    margin: 0 auto; /* Centers it in the column */
+    height: 510px;
+    background-image: url(assets/footer.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    overflow: hidden;
+    z-index: 3;
+}
+
+
+span.footer-text {
+    position:absolute;
+    display:inline-block;
+    font-family:olivetti;
+    color:#c1bdb0;
+    font-size:26px;
+    text-transform: lowercase;
+    margin-left:-20%;
+    bottom:50px;
+    text-shadow:0px 0px 7px #000;
+
+}
+
+@media (max-width: 1000px) {
+    span.footer-text {
+        font-size:20px;
+        bottom:20px;
+    }
+}
+
+@media (max-width: 700px) {
+    span.footer-text {
+        font-size:16px;
+        bottom:15px;
+    }
+}
+
+
+
+.rss-icon {
+      width: 13px;   /* Change this number to make it bigger or smaller */
+  height: 13px;  /* Keep this the same as the width for a perfect square */
+  vertical-align: middle; /* Keeps it aligned nicely if it's next to text */
+  padding:0px 0px 5px 0px;
+  fill: currentColor;
+}
+
+
+
+@media (max-width: 700px) {
+
+  /* 1. Hide the sidebar completely */
+  #sidebar {
+    display: none;
+  }
+
+  /* 2. Remove the Grid layout from #middle */
+  #middle {
+    display: block; /* Changes from grid to normal block flow */
+    width: 100%;
+    padding-top: 20px; /* Gives a little breathing room below the header */
+  }
+
+  /* 3. Center the content and fix the broken margins */
+  .content-area {
+    position: relative;
+    max-width: 95%; /* Keeps it inside the screen edges */
+    margin: 0 auto; /* Centers it perfectly */
+    font-family: typewriter;
+    font-size: 13px;
+    z-index: 1;
+    /* IMPORTANT: We removed the negative margins here so it stops overlapping the header! */
+  }
+
+  /* 4. Ensure the header/menu stay side-by-side and don't get overlapped */
+  #top {
+    display: flex;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+}
+
+
+/* Back to Top Button Styling */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  
+  /* CHANGE THIS: Must be higher than .content-area's 100001 */
+  z-index: 100002; 
+
+  /* 1. Make the main button completely transparent */
+  background: transparent; 
+  color: #c85e41;
+  font-family: 'olivetti', sans-serif;
+  font-size: 24px;
+  border: 3px solid rgba(200, 94, 65, 0.7);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.0);
+
+  /* 2. Hide it WITHOUT using opacity: 0 */
+  visibility: hidden;
+  transform: translateY(20px) translate3d(0, 0, 0);
+  transition: all 0.3s ease, visibility 0.3s;
+}
+
+/* The class JavaScript will add when you scroll down */
+#back-to-top.show {
+  visibility: visible;
+  transform: translateY(0) translate3d(0, 0, 0);
+}
+
+/* 3. The pseudo-element handles the background and blur */
+#back-to-top::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(200, 94, 65, 0.3);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: -1; /* Puts it behind the arrow icon and border */
+}
+
+/* Hover effect for the main button (border and icon) */
+#back-to-top:hover {
+  color: #c85e41;
+  border: 3px solid rgba(200, 94, 65, 1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect for the background blur layer */
+#back-to-top:hover::before {
+  background-color: rgba(200, 94, 65, 0.3);
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 700px) {
+  #back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+#fire-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Crucial: lets you click links/buttons underneath the fire */
+  z-index: 9999998; /* High enough to be seen, but below mobile menu (999999) and back-to-top (100002) */
+}
+
+
+
+
+
+
+body.videos-off .bg-video,
+body.videos-off .box-video,
+body.videos-off #fire-canvas {
+    display: none !important;
+}
+
+/* Optional: Make the button look nice and match your theme */
+#toggle-videos {
+  background: transparent;
+  border: none;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 1;
+  
+  /* Your custom styles */
+  color: #c85e41;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border-bottom: 3px solid transparent;
+  padding: 2px 0px 0px 0px; 
+  transition: all 0.2s;
+  font-family: typewriter;
+  cursor: pointer;
+}
+
+#toggle-videos:hover {
+  border-bottom: 3px solid rgba(200, 94, 65, 0.7);
+ background-color: rgba(200, 94, 65, 0.3);
+ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}

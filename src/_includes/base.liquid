@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    .top-menu a, .top-menu a:visited { color: #c1bdb0 !important; }
+  </style>
+
+  <link rel="stylesheet" href="/css.css">
+  <link rel="stylesheet" href="/css.css?v={{ 'now' | date: '%Y%m%d%H%M' }}">
+
+</head>
+<body>
+  
+  <canvas id="fire-canvas"></canvas>
+
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="/assets/fire-bg.mp4" type="video/mp4">
+  </video>
+
+  {% include "header.liquid" %}
+
+  <div id="middle">
+    <div id="sidebar">{% include "sidebar.liquid" %}</div>
+    <main class="content-area">
+      <div id="content-wrapper">
+        {{ content }} 
+      </div>
+    </main>
+      {% include "footer.liquid" %}
+  </div>
+
+
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <span class="lightbox-next">&#10095;</span>
+    <img class="lightbox-image" src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+
+  <script src="/dropdown.js"></script>
+  <script src="/fire.js"></script>
+  <script src="/back-to-top.js"></script>
+  <script src="/backend.js"></script>
+  <script src="/comment-widget.js"></script>
+
+</body>
+</html>
