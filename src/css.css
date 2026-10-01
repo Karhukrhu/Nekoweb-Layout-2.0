@@ -1434,6 +1434,7 @@ a.tag-item, a.tag-item:visited {
   max-width: 300px; 
   padding: 5px;
   font-family: inherit;
+  box-sizing: border-box;
 }
 
 .content-area .c-form-row .c-input.c-textInput {
@@ -1531,6 +1532,7 @@ textarea#c-message.c-input {
 	margin:5px 0px;
 	border: 3px solid rgba(200, 94, 65, 0.7);
   font-family: typewriter;
+  box-sizing: border-box;
 }
 .c-input:focus {border: 3px solid rgba(200, 94, 65, 1);box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);}
 
