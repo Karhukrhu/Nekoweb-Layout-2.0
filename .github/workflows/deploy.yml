@@ -1,4 +1,4 @@
-name: Deploy to Nekoweb
+name: Deploy Blog to Nekoweb
 
 on:
   push:
@@ -25,12 +25,12 @@ jobs:
           chmod -R +x node_modules/.bin
           npm run build
 
-      - name: Deploy to Nekoweb
+      - name: Deploy ONLY the blog to Nekoweb
         uses: mp-pinheiro/nekoweb-deploy@0.3.0
         with:
           API_KEY: ${{ secrets.NEKOWEB_API_KEY }}
-          BUILD_DIR: './public'
-          DEPLOY_DIR: '/karhukarhu.place'
-          CLEANUP: 'False'
-          DELAY: '2'
+          BUILD_DIR: './public/blog'             # <-- ONLY look at the blog folder!
+          DEPLOY_DIR: '/karhukarhu.place/blog'   # <-- ONLY put it in the blog folder!
+          CLEANUP: 'False'                       # <-- Don't delete anything, just update
+          DELAY: '1'                             # <-- 1 second is plenty fast for just a few files
           NEKOWEB_PAGENAME: 'karhukarhu'
