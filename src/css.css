@@ -978,12 +978,14 @@ padding:0px;
     background-color: #c1bdb0;
     background-blend-mode: multiply;
     margin:2px;
+    border:3px soild rgba(200, 94, 65, 0.7);
 }
 
 .gallery-item:hover {
     width:75px;
     height: 75px;
     background-blend-mode: normal;
+    border:3px solid rgba(200, 94, 65, 1);
     cursor: pointer;
     
 }
