@@ -1,16 +1,16 @@
 @font-face {
   font-family: ocenaside; /* set name */
-  src: url(assets/oceanside.ttf); /* url of the font */
+  src: url(/assets/Oceanside.ttf); /* url of the font */
 }
 
 @font-face {
   font-family: typewriter; /* set name */
-  src: url(assets/typewriter.ttf); /* url of the font */
+  src: url(/assets/Typewriter.ttf); /* url of the font */
 }
 
 @font-face {
   font-family: olivetti; /* set name */
-  src: url(assets/Olivettilettera.ttf); /* url of the font */
+  src: url(/assets/OlivettiLettera.ttf); /* url of the font */
 }
 
 body {
