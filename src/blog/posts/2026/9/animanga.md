@@ -1,7 +1,7 @@
 ---
 title: My Relationship With Animanga
 date: 2026-09-05
-categories: ["Personal"]
+categories: ["personal"]
 tags: post
 description: "Rant about not finding anything good to read or watch"
 ---

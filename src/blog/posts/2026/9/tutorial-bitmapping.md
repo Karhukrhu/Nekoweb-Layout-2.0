@@ -2,7 +2,7 @@
 title: Tutorial on How to Create A Pixelated Image look
 date: 2026-09-02
 cover: "/blog/posts/2026/9/bitmapping-tutorial/ba.png"
-categories: ["Photo editing", "Tutorial", "Bitmap"]
+categories: ["photo editing", "tutorial", "bitmap"]
 tags: post
 description: "Made a lil tut on how to create pixelated images on PS"
 ---

@@ -1,7 +1,7 @@
 ---
 title: New Layout & Back to My Roots
 date: 2026-10-01
-categories: ["Website", "Personal"]
+categories: ["website", "personal"]
 tags: post
 description: "The new layout is now alive and kicking. Wasn't an easy project as one might suspect. I feel like this new layout is more like what I am compared to the last one."
 ---

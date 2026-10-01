@@ -1,7 +1,7 @@
 ---
 title: I Feel Stupid
 date: 2026-09-16
-categories: ["Personal", "Vent"]
+categories: ["personal", "vent"]
 tags: post
 description: "Venting about how stupid I feel I am."
 ---
