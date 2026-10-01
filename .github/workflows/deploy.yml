@@ -1,3 +1,5 @@
+name: Deploy Full Site to Nekoweb
+
 on:
   push:
     branches:
