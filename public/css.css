@@ -1,16 +1,16 @@
 @font-face {
   font-family: ocenaside; /* set name */
-  src: url(assets/oceanside.ttf); /* url of the font */
+  src: url(/assets/Oceanside.ttf); /* url of the font */
 }
 
 @font-face {
   font-family: typewriter; /* set name */
-  src: url(assets/typewriter.ttf); /* url of the font */
+  src: url(/assets/Typewriter.ttf); /* url of the font */
 }
 
 @font-face {
   font-family: olivetti; /* set name */
-  src: url(assets/Olivettilettera.ttf); /* url of the font */
+  src: url(/assets/OlivettiLettera.ttf); /* url of the font */
 }
 
 body {
@@ -2111,7 +2111,7 @@ span.footer-text {
     color:#c1bdb0;
     font-size:26px;
     text-transform: lowercase;
-    margin-left:-20%;
+    margin:0 auto;
     bottom:50px;
     text-shadow:0px 0px 7px #000;
 
