@@ -34,13 +34,13 @@ body {
 .bg-video {
   position: absolute;
   left: -150px;
-  width: auto;       /* Change this to whatever size you want */
+  width: auto;       
   height: 535px; 
   
-  /* This is the magic property: it makes the video act like background-size: cover */
+
   object-fit: cover; 
   
-  /* Pushes the video behind all other content */
+
   z-index: -1; 
 }
 
@@ -210,10 +210,9 @@ width: 100%;
     }
 }
 
-/* 1. The Link: Gets the full border and acts as an anchor */
 .top-menu a, .top-menu a:visited {
     display: inline-block;
-    position: relative; /* CRITICAL: This makes the link the "anchor" for the flame */
+    position: relative; 
     color: inherit;
     text-decoration: none;
     font-size:26px;
@@ -231,14 +230,12 @@ width: 100%;
     }
 }
 
-/* 2. The Hover State: Adds the full border around the text */
+
 .top-menu a:hover {
     transform: translate(5px, 0);
 
 }
 
-/* 1. The Dropdown Container */
-/* 1. The Container (No border-left here anymore!) */
 .top-menu .dropdown-content {
   list-style: none;
   padding: 0;
@@ -264,7 +261,6 @@ width: 100%;
   opacity: 1;
 }
 
-/* 2. The List Items (Smaller spacing) */
 .top-menu .dropdown-content li {
   position: relative; 
   padding: 4px 0;    
@@ -277,7 +273,7 @@ width: 100%;
     }
 }
 
-/* 3. The Horizontal Branch (Unchanged) */
+
 .top-menu .dropdown-content li::before {
   content: "";
   position: absolute;
@@ -287,28 +283,28 @@ width: 100%;
   border-top: 2px solid #c1bdb0; 
 }
 
-/* 4. The Vertical Segments (The Magic Fix) */
+
 .top-menu .dropdown-content li::after {
   content: "";
   position: absolute;
   left: -20px;
   
-  /* Starts at the middle of the PREVIOUS item */
+
   top: -50%; 
   
-  /* Goes down to the middle of the CURRENT item */
+
   height: 100%; 
   
   border-left: 2px solid #c1bdb0; 
 }
 
-/* 5. Fix the very first item so it doesn't draw a line into empty space above */
+
 .top-menu .dropdown-content li:first-child::after {
   top: 0;
   height: 50%;
 }
 
-/* 6. The Links */
+
 .top-menu .dropdown-content li a {
   display: block;
   text-decoration: none;
@@ -324,13 +320,13 @@ width: 100%;
 
 @media (max-width: 1000px) {
 
-  /* 1. The Container: Padding MUST match the left offset of the lines */
+
   .top-menu .dropdown-content {
     margin-left: 20px;              
-    padding-left: 20px; /* CRITICAL: This creates the track for the lines */
+    padding-left: 20px; 
   }
 
-  /* 2. The List Items */
+
   .top-menu .dropdown-content li {
     position: relative; 
     padding: 2px 6px;  
@@ -338,27 +334,26 @@ width: 100%;
     font-size: 14px;
   }
 
-  /* 3. The Horizontal Branch */
   .top-menu .dropdown-content li::before {
     content: "";
     position: absolute;
-    left: -20px; /* MUST exactly match the 20px padding above */
+    left: -20px; 
     top: 50%;           
     width: 15px;        
     border-top: 1px solid #c1bdb0; 
   }
 
-  /* 4. The Vertical Segments */
+
   .top-menu .dropdown-content li::after {
     content: "";
     position: absolute;
-    left: -20px; /* MUST exactly match the 20px padding above */
+    left: -20px; 
     top: -50%; 
     height: 100%; 
     border-left: 1px solid #c1bdb0; 
   }
 
-  /* 5. Fix the very first item */
+
   .top-menu .dropdown-content li:first-child::after {
     top: 0;
     height: 50%;
@@ -372,13 +367,13 @@ width: 100%;
 }
 
 .hamburger-btn {
-  display: none; /* Hidden on desktop */
+  display: none; 
 }
 
-/* --- MOBILE (Under 600px) --- */
+
 @media (max-width: 1000px) {
   
-  /* 1. Show and style the hamburger button */
+
   .hamburger-btn {
     display: block;
     position: absolute;
@@ -392,18 +387,18 @@ width: 100%;
     height: 35px;
   }
 
-  /* Draw the 3 lines of the hamburger */
+
   .hamburger-btn span {
     display: block;
     width: 100%;
     height: 4px;
-    background-color: #c1bdb0; /* Matches your menu text color */
+    background-color: #c1bdb0; 
     margin-bottom: 7px;
     transition: all 0.3s ease;
     z-index: 9999999;
   }
 
-  /* 2. Hide the normal menu by default on mobile */
+
   .top-menu .main-menu-list {
     display: none; 
     
@@ -412,12 +407,12 @@ width: 100%;
     font-size:26px;
 }
 
-  /* 3. When the button is clicked, show the menu in mobile mode */
+
  #top .top-menu .main-menu-list.mobile-active {
     display: flex !important;
     flex-direction: column;
-    justify-content: center;          /* Keeps them perfectly centered VERTICALLY */
-    align-items: flex-start !important; /* CHANGED: Aligns them to the LEFT edge */
+    justify-content: center;         
+    align-items: flex-start !important; 
     
     position: fixed !important;
     top: 0 !important;
@@ -426,7 +421,7 @@ width: 100%;
     height: 100vh !important;
     background-color: #000 !important;
     
-    /* CHANGED: 30px padding on the left, 20px on the other sides */
+    
     padding: 20px 20px 20px 100px !important; 
     
     box-sizing: border-box;
@@ -434,13 +429,11 @@ width: 100%;
     z-index: 100 !important; 
   }
 
-  /* Optional: Add a little breathing room between the main links */
   .top-menu .main-menu-list.mobile-active > li {
     margin: 15px 0;
   }
 
 
-  /* Optional: Turn the hamburger into an 'X' when open */
   .hamburger-btn.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -452,29 +445,29 @@ width: 100%;
   }
 
   .top-menu .main-menu-list.mobile-active .dropdown-content {
-    margin-left: 20px;      /* Indents the whole submenu block */
-    padding-left: 20px;     /* Creates the track for the vertical line */
-    margin-top: 10px;       /* Adds a little space below the main link (e.g., "II. about") */
+    margin-left: 20px;     
+    padding-left: 20px;    
+    margin-top: 10px;      
   }
 
-  /* 2. The List Items: Anchor for the lines */
+
   .top-menu .main-menu-list.mobile-active .dropdown-content li {
-    position: relative;     /* CRITICAL: Allows absolute positioning of the lines */
+    position: relative;     
     padding: 10px 5px;
     list-style: none;
   }
 
-  /* 3. The Horizontal Branch */
+
   .top-menu .main-menu-list.mobile-active .dropdown-content li::before {
-    content: "";            /* CRITICAL: Must be empty, not "-" */
+    content: "";           
     position: absolute;
-    left: -20px;            /* Pulls it back into the padding track */
+    left: -20px;          
     top: 50%;
     width: 20px;
     border-top: 2px solid #c1bdb0; 
   }
 
-  /* 4. The Vertical Segments */
+
   .top-menu .main-menu-list.mobile-active .dropdown-content li::after {
     content: "";
     position: absolute;
@@ -484,7 +477,7 @@ width: 100%;
     border-left: 2px solid #c1bdb0; 
   }
 
-  /* 5. Fix the very first item so the line doesn't stick up into empty space */
+
   .top-menu .main-menu-list.mobile-active .dropdown-content li:first-child::after {
     top: 0;
     height: 50%;
@@ -510,12 +503,12 @@ width: 100%;
     height: 25px;
   }
 
-  /* Draw the 3 lines of the hamburger */
+
   .hamburger-btn span {
     display: block;
     width: 100%;
     height: 3px;
-    background-color: #c1bdb0; /* Matches your menu text color */
+    background-color: #c1bdb0; 
     margin-bottom: 5px;
     transition: all 0.3s ease;
     z-index: 9999999;
@@ -524,8 +517,8 @@ width: 100%;
 
 
 body.no-scroll {
-  overflow: hidden; /* Disables the scrollbar */
-  height: 100vh;    /* Prevents the page from bouncing on iOS devices */
+  overflow: hidden; 
+  height: 100vh;    
 }
 
 
@@ -535,7 +528,6 @@ body.no-scroll {
     display: grid;
     grid-template-columns: 500px 1fr; 
     
-    /* ADD THIS LINE BACK! It's the magic that pushes the footer down */
     grid-template-rows: 1fr auto; 
     
     max-width: 1498px; 
@@ -561,35 +553,35 @@ body.no-scroll {
 
 @media (max-width: 700px) {
     
-    /* 1. Force #middle to stretch to the bottom of the screen */
+
     #middle {
-        display: flex !important; /* Flex is much better than block/grid for sticky footers */
+        display: flex !important; 
         flex-direction: column;
         width: 100%;
         padding-top: 20px;
     }
 
-    /* 2. Hide the sidebar */
+
     #sidebar { display: none; }
 
-    /* 3. CRITICAL: Reset the content area so it stops pulling the footer up! */
+
     #middle .content-area {
-        /* RESET the negative margins from the 1000px rule */
+
         margin-top: 0 !important; 
         margin-bottom: 0 !important; 
         margin-left: 0 !important; 
         
-        /* Make the text stretch to push the footer down */
+
         flex: 1; 
         
-        /* Centering and sizing */
+
         max-width: 95%; 
         margin: 0 auto;
         padding-bottom: 50px; 
         position: relative;
     }
 
-    /* 4. Reset the footer so it sits perfectly at the bottom */
+
     #middle #footer {
         /* RESET any weird margins */
         margin-top: 0 !important;
@@ -603,7 +595,7 @@ body.no-scroll {
         align-items: center;
     }
 
-    /* 5. Keep the burnt paper and video sized correctly for mobile */
+
     .footer-content {
         background-image: url(assets/footer_600.png);
         max-width: 305px; 
@@ -660,18 +652,18 @@ body.no-scroll {
       margin-top: 0px;
     }
     .content-area, #footer {
-        /* 1. Make them span across the whole layout */
+
         grid-column: 1 / -1; 
         
-        /* 2. Set your exact starting and ending points */
-        margin-left: 250px;  /* Starts 20px from the left edge of the screen */
-        margin-right: 20px; /* Ends 20px from the right edge */
+
+        margin-left: 250px;  
+        margin-right: 20px; 
         
-        /* 3. Let them stretch to fill that space */
+
         width: auto;
-        max-width: none; /* Removes the 700px/998px caps */
+        max-width: none; 
         
-        /* 4. Keep your existing vertical spacing */
+
 
         transform: none;
         position: relative;
@@ -680,18 +672,18 @@ body.no-scroll {
 
 @media (max-width: 700px) {
     #middle .content-area {
-        /* 1. Put it back in the normal flow so it takes up space */
+
         position: relative; 
         
-        /* 2. Reset the absolute anchors */
+
         left: auto;
         right: auto;
         
-        /* 3. Center it and give it a safe width */
+
         max-width: 95%; 
         margin: 0 auto;
         
-        /* 4. Add a little padding so the footer doesn't cover the last words */
+
         padding-bottom: 50px; 
     }
 }
@@ -854,22 +846,22 @@ p.sml::first-letter {
     gap: 15px; 
     margin-bottom: 10px;
     
-    /* 1. Aligns both columns to the very top so they start on the same row */
+
     align-items: flex-start; 
 }
 
 .update-date {
-    /* 2. Give the left column a fixed width (adjust 100px to fit your dates) */
+
     width: 100px; 
-    flex-shrink: 0; /* Prevents the date from squishing if the screen gets small */
+    flex-shrink: 0; 
     letter-spacing: 2px;
     
-    /* Make sure there is no margin pushing it down! */
+
     margin-top: 0; 
 }
 
 .update-content {
-    /* 3. Makes the right column take up ALL the remaining space */
+
     flex: 1; 
     
     display: flex;
@@ -880,7 +872,7 @@ p.sml::first-letter {
 .update-desc {
     font-size: 12px;
     font-weight: 300;
-    margin: 0; /* Resets default browser margins for perfect alignment */
+    margin: 0; 
 }
 
 
@@ -975,7 +967,7 @@ padding:0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: pointer; /* Shows the hand cursor */
+    cursor: pointer; 
 }
 
 .gallery-item {
@@ -1080,29 +1072,29 @@ padding:0px;
 }
 
 .like-button {
-    /* Layout & Spacing */
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0px;
     padding: 10px 5px 10px 6px;
     
-    /* FIX: Add fixed dimensions to prevent resizing */
+
     min-width: 10px;
     height: 21px;
     
-    /* Appearance */
+
     background-color: rgba(200, 94, 65, 0.3);
     border: 3px solid rgba(200, 94, 65, 0.7);
     
-    /* Typography */
+
     font-family: inherit;
     font-size: 12px;
     color: #c85e41;
     line-height: 1;
   }
   
-  /* Hover state */
+
   .like-button:hover {
     background-color: rgba(200, 94, 65, 0.3);
     border: 3px solid rgba(200, 94, 65, 1);
@@ -1111,12 +1103,12 @@ padding:0px;
     cursor: pointer;
   }
   
-  /* Active/Clicked state */
+
   .like-button:active {
     transform: translateY(0);
   }
   
-  /* Disabled state (already liked) */
+
   .like-button:disabled {
     background-color: transparent;
     color: #c85e41; 
@@ -1129,7 +1121,7 @@ padding:0px;
     border: 3px solid rgba(200, 94, 65, 0.7);
   }
   
-  /* The heart icon container */
+
   .like-heart {
     display: inline-flex;
     align-items: center;
@@ -1138,24 +1130,24 @@ padding:0px;
     flex-shrink: 0;
   }
   
-  /* The SVG heart itself */
+
   .heart-svg {
     width: 13px;
     height: 13px;
     display: block;
   }
   
-  /* Style for the outline heart */
+
   #heart-outline {
     stroke: rgba(200, 94, 65, 0.7);
   }
   
-  /* Hover state for outline heart */
+
   .like-button:hover #heart-outline {
     stroke: #c85e41;
   }
   
-  /* The count number */
+
   .like-count {
     font-weight: 300;
     min-width: 20px;
@@ -1234,7 +1226,7 @@ padding:0px;
 }
 
 .content-area .lightbox {
-  /* Reset all positioning so it doesn't stick to the corners */
+
   position: relative !important;
   top: auto !important;
   left: auto !important;
@@ -1246,16 +1238,16 @@ padding:0px;
   opacity: 1 !important;
 }
 
-/* 2. Ensure the wrapper centers it perfectly */
+
 .img-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center; /* Failsafe centering */
+  text-align: center; 
   margin: 30px auto;
 }
 
-/* 3. Style the actual image inside the link */
+
 .content-area a.lightbox {
   background-color: transparent !important;
   background-image: none !important;
@@ -1268,7 +1260,7 @@ padding:0px;
   display: inline-block !important;
 }
 
-/* 2. Your existing image rule */
+
 .content-area a.lightbox img.blog-img {
   display: block;
   max-width: 600px;
@@ -1288,22 +1280,22 @@ a.lightbox img.blog-img:hover {
 .img-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centers the group as a whole */
+  justify-content: center; 
   gap:5px;
   margin: 30px 0;
   padding: 0 !important;
 }
 
-/* 2. The Individual Blocks */
+
 .img-row .img-center {
-  /* '0 0 auto' stops them from stretching and leaving weird gaps */
+
   flex: 0 0 auto !important; 
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box;
 }
 
-/* 3. The Link */
+
 .img-row a.lightbox {
   display: block;
   margin: 0 !important;
@@ -1312,23 +1304,22 @@ a.lightbox img.blog-img:hover {
   background-color: transparent !important;
 }
 
-/* 4. The Image */
+
 .img-row img.blog-img {
   display: block;
   margin: 0 !important;
   padding: 0 !important;
   
-  /* THIS IS THE KEY: Removes the 3px border that was pushing them apart! */
+
   border: none !important; 
   
   width: 100%;
-  max-width: 300px; /* Adjust this to control how big the side-by-side images are */
+  max-width: 300px; 
 }
 
 
 
 
-/* For mobile: stack images vertically */
 @media (max-width: 600px) {
   .img-row {
     flex-direction: column;
@@ -1351,21 +1342,21 @@ a.lightbox img.blog-img:hover {
   padding-top: 20px;
 }
 
-/* 1. Target the EXACT classes used in your HTML: "nav-link" */
+
 .post-navigation a.nav-link {
-  /* Force it to be inline-block so vertical padding actually renders */
+
   display: inline-block !important;
   
   /* Match your global link padding */
   padding: 2px 5px 0px 5px !important;
   
-  /* OVERRIDE the crushing 0.7 line-height from .content-area a */
+
   line-height: 1.2 !important; 
   
   margin: 0 !important;
 }
 
-/* 2. Keep your width constraints using the correct classes */
+
 .post-navigation a.nav-link.prev {
   text-align: left;
   max-width: 45%; 
@@ -1380,29 +1371,29 @@ a.lightbox img.blog-img:hover {
 
 .pagination-nav a {
   display: inline-block !important;
-  padding: 2px 5px 0px 5px !important; /* Match your global link padding */
-  line-height: 1.2 !important; /* Prevents the 0.7 line-height from crushing the padding */
-  margin: 0 5px !important; /* Adds a little space between numbers/links */
+  padding: 2px 5px 0px 5px !important; 
+  line-height: 1.2 !important; 
+  margin: 0 5px !important; 
 }
 
 
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* Slightly larger gap for bigger text */
+  gap: 15px; 
   margin-top: 20px;
   align-items: center; 
 }
 
 a.tag-item, a.tag-item:visited {
   display: inline-block !important;
-  padding: 2px 5px 0px 5px !important; /* Match your global link padding */
-  line-height: 1.2 !important; /* Prevents the 0.7 line-height from crushing the padding */
-  margin: 0 5px !important; /* Adds a little space between numbers/links */
+  padding: 2px 5px 0px 5px !important; 
+  line-height: 1.2 !important; 
+  margin: 0 5px !important; 
 }
 
 .tag-count {
-  font-size: 0.75em; /* This makes the (count) always 75% of the main text size */
+  font-size: 0.75em; 
   opacity: 0.8;
   margin-left: 4px;
 }
@@ -1424,23 +1415,23 @@ a.tag-item, a.tag-item:visited {
 
 .c-form-row {
   display: grid;
-  /* 160px for the label, the rest of the space for the input */
+
   grid-template-columns: 100px 1fr; 
-  gap: 15px; /* Space between label and input */
-  align-items: center; /* Vertically centers them if heights differ */
+  gap: 15px; 
+  align-items: center; 
 }
 
-/* 2. Align labels to the left */
+
 .content-area .c-form-row .c-label {
   text-align: left; 
-  font-weight: bold; /* Optional: makes labels stand out */
+  font-weight: bold; 
   font-size: 13px;
 }
 
-/* 3. Constrain the inputs so they don't stretch across the whole screen */
+
 .c-form-row .c-input {
   width: 100%;
-  max-width: 300px; /* Adjust this to make inputs wider or narrower */
+  max-width: 300px; 
   padding: 5px;
   font-family: inherit;
 }
@@ -1458,17 +1449,16 @@ textarea#c-message.c-input {
   box-sizing: border-box !important; 
 }
 
-/* 4. Make the textarea sit in the second column */
 .c-form-row textarea.c-input {
-  grid-column: 2; /* Forces it to start under the other inputs */
+  grid-column: 2; 
   height: 100px;
-  resize: vertical; /* Allows user to drag it taller */
+  resize: vertical; 
 }
 
-/* 5. Align the Submit button nicely */
+
 .c-button-wrapper {
   display: flex;
-  justify-content: flex-end; /* Pushes button to the right */
+  justify-content: flex-end; 
   margin-top: 10px;
 }
 
@@ -1514,7 +1504,7 @@ textarea#c-message.c-input {
 
 #c_textWrapper .c-label {
   align-self: start !important; 
-  margin-top: 8px !important; /* Optical tweak: matches the first line of text inside the box */
+  margin-top: 8px !important; 
 }
 
 #c_inputDiv {
@@ -1656,14 +1646,13 @@ button#c_submitButton:hover {
 
 
 
-/* 1. Add this new wrapper class */
 .c-reply-wrapper {
     margin-left: auto;
     margin-right: 0;
     margin-bottom: 10px;
 }
 
-/* 3. The Header Row */
+
 .c-reply-header {
     display: flex;
     justify-content: space-between;
@@ -1689,19 +1678,18 @@ button#c_submitButton:hover {
 }
     }
 
-/* 3. Update .c-reply (Remove width/margin-left, keep padding) */
+
 .c-reply {
     display: block;
     width: 100%;
     margin-right: 0;
     padding: 0px; 
     
-    /* ADD THIS: Pushes the visual center down to align with the text box */
+
     padding-bottom: 20px; 
     
 }
 
-/* 4. Your existing .c-replyContainer stays exactly the same! */
 .c-replyContainer {
     display: flex !important; 
     align-items: center; 
@@ -1722,7 +1710,7 @@ button#c_submitButton:hover {
   line-height: 0;
 }
 
-/* Pagination container - spread buttons to opposite ends */
+
 #c_pagination {
     display: flex;
     justify-content: space-between;
@@ -1732,24 +1720,24 @@ button#c_submitButton:hover {
     box-sizing: border-box;
 }
 
-/* Previous button - all the way to the left */
+
 .c-paginationLeft {
     margin-right: auto;
 }
 
-/* Next button - all the way to the right */
+
 .c-paginationRight {
     margin-left: auto;
 }
 
-/* Style the SVG arrows */
+
 .c-paginationButton svg {
     display: block;
     width: 24px;
     height: 24px;
 }
 
-/* Optional: Add hover effects */
+
 .c-paginationButton:hover:not(:disabled) {
     opacity: 0.7;
     transition: all 0.2s ease;
@@ -1757,7 +1745,7 @@ button#c_submitButton:hover {
     cursor: pointer;
 }
 
-/* Optional: Style disabled buttons */
+
 .c-paginationButton:disabled {
     opacity: 0.3;
     cursor: not-allowed;
@@ -1907,7 +1895,7 @@ button#c_submitButton:hover {
 }
 }
 
-/* The hover effect */
+
 
 
 .steam-info {
@@ -1923,14 +1911,14 @@ button#c_submitButton:hover {
 
 .auto-marquee {
   display: inline-block !important;
-  width: max-content !important; /* Lets the text be as wide as it naturally needs to be */
+  width: max-content !important; 
   animation: scroll-perfect 8s linear infinite alternate !important;
 }
 
-/* 4. The Perfect Scroll Animation */
+
 @keyframes scroll-perfect {
   0% { transform: translateX(0); }
-  /* Scrolls exactly the distance calculated by the JS below */
+
   100% { transform: translateX(var(--scroll-distance, -50%)); } 
 }
 
@@ -2019,9 +2007,9 @@ border-bottom: 3px solid rgba(200, 94, 65, 0.7);
 
 @media (max-width: 700px) {
     
-    /* 1. Fix the Footer Container */
+
     #middle #footer {
-        /* CRITICAL: Reset the 250px left margin from the 1000px rule! */
+
         margin-left: 0 !important;
         margin-right: 0 !important;
         margin-top: -350px!important;
@@ -2034,23 +2022,23 @@ border-bottom: 3px solid rgba(200, 94, 65, 0.7);
         align-items: center;
     }
 
-    /* 2. Fix the Burnt Paper Image Size */
+
     .footer-content {
         background-image: url(assets/footer_600.png);
-        max-width: 305px; /* Keep your desired width */
+        max-width: 305px; 
         
-        /* CRITICAL: Remove the fixed 510px height! */
+
         height: auto; 
         
-        /* Use aspect ratio to keep the shape correct without being huge */
+
         aspect-ratio: 998 / 510; 
         
-        margin: 0 auto; /* Center the image inside the footer */
+        margin: 0 auto; 
     }
 
-    /* 3. Fix the Video inside the footer */
+
     .box-video {
-        max-width: 305px; /* Match the footer content width */
+        max-width: 305px; 
         aspect-ratio: 998 / 510;
     }
 }
@@ -2072,13 +2060,13 @@ border-bottom: 3px solid rgba(200, 94, 65, 0.7);
 
 .box-video {
   position: absolute;
-  bottom: 0; /* Must be bottom: 0 to stay in the hole */
+  bottom: 0; 
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   max-width: 998px; 
   
-  /* REPLACE height: auto with this: */
+
   aspect-ratio: 998 / 510; 
   
   object-fit: cover;
@@ -2088,12 +2076,11 @@ border-bottom: 3px solid rgba(200, 94, 65, 0.7);
 
 
 
-/* The Burnt Paper: Constrained and centered */
 .footer-content {
     position: relative;
     width: 100%;
-    max-width: 998px; /* Prevents stretching */
-    margin: 0 auto; /* Centers it in the column */
+    max-width: 998px; 
+    margin: 0 auto; 
     height: 510px;
     background-image: url(assets/footer.png);
     background-repeat: no-repeat;
@@ -2134,9 +2121,9 @@ span.footer-text {
 
 
 .rss-icon {
-      width: 13px;   /* Change this number to make it bigger or smaller */
-  height: 13px;  /* Keep this the same as the width for a perfect square */
-  vertical-align: middle; /* Keeps it aligned nicely if it's next to text */
+      width: 13px;   
+  height: 13px;  
+  vertical-align: middle; 
   padding:0px 0px 5px 0px;
   fill: currentColor;
 }
@@ -2145,30 +2132,30 @@ span.footer-text {
 
 @media (max-width: 700px) {
 
-  /* 1. Hide the sidebar completely */
+
   #sidebar {
     display: none;
   }
 
-  /* 2. Remove the Grid layout from #middle */
+
   #middle {
-    display: block; /* Changes from grid to normal block flow */
+    display: block; 
     width: 100%;
-    padding-top: 20px; /* Gives a little breathing room below the header */
+    padding-top: 20px; 
   }
 
-  /* 3. Center the content and fix the broken margins */
+
   .content-area {
     position: relative;
-    max-width: 95%; /* Keeps it inside the screen edges */
-    margin: 0 auto; /* Centers it perfectly */
+    max-width: 95%; 
+    margin: 0 auto; 
     font-family: typewriter;
     font-size: 13px;
     z-index: 1;
-    /* IMPORTANT: We removed the negative margins here so it stops overlapping the header! */
+
   }
 
-  /* 4. Ensure the header/menu stay side-by-side and don't get overlapped */
+
   #top {
     display: flex;
     width: 100%;
@@ -2178,16 +2165,16 @@ span.footer-text {
 }
 
 
-/* Back to Top Button Styling */
+
 #back-to-top {
   position: fixed;
   bottom: 30px;
   right: 30px;
   
-  /* CHANGE THIS: Must be higher than .content-area's 100001 */
+
   z-index: 100002; 
 
-  /* 1. Make the main button completely transparent */
+
   background: transparent; 
   color: #c85e41;
   font-family: 'olivetti', sans-serif;
@@ -2201,19 +2188,19 @@ span.footer-text {
   justify-content: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.0);
 
-  /* 2. Hide it WITHOUT using opacity: 0 */
+
   visibility: hidden;
   transform: translateY(20px) translate3d(0, 0, 0);
   transition: all 0.3s ease, visibility 0.3s;
 }
 
-/* The class JavaScript will add when you scroll down */
+
 #back-to-top.show {
   visibility: visible;
   transform: translateY(0) translate3d(0, 0, 0);
 }
 
-/* 3. The pseudo-element handles the background and blur */
+
 #back-to-top::before {
   content: "";
   position: absolute;
@@ -2221,22 +2208,22 @@ span.footer-text {
   background-color: rgba(200, 94, 65, 0.3);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  z-index: -1; /* Puts it behind the arrow icon and border */
+  z-index: -1; 
 }
 
-/* Hover effect for the main button (border and icon) */
+
 #back-to-top:hover {
   color: #c85e41;
   border: 3px solid rgba(200, 94, 65, 1);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Hover effect for the background blur layer */
+
 #back-to-top:hover::before {
   background-color: rgba(200, 94, 65, 0.3);
 }
 
-/* Adjust for mobile screens */
+
 @media (max-width: 700px) {
   #back-to-top {
     bottom: 20px;
@@ -2253,8 +2240,8 @@ span.footer-text {
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* Crucial: lets you click links/buttons underneath the fire */
-  z-index: 9999998; /* High enough to be seen, but below mobile menu (999999) and back-to-top (100002) */
+  pointer-events: none; 
+  z-index: 9999998; 
 }
 
 
@@ -2268,7 +2255,6 @@ body.videos-off #fire-canvas {
     display: none !important;
 }
 
-/* Optional: Make the button look nice and match your theme */
 #toggle-videos {
   background: transparent;
   border: none;
