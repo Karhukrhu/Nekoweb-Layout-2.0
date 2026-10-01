@@ -1,0 +1,17 @@
+---
+title: Category Cloud
+layout: base
+---
+
+<h2>Blog</2>
+<h3>Tag Cloud</h3>
+
+<div class="tag-cloud">
+  {% for cat in collections.categoryCloud %}
+    <a href="/categories/{{ cat.name | slug }}/" 
+       class="tag-item" 
+       style="font-size: {{ cat.fontSize }}rem;">
+      {{ cat.name }} <span class="tag-count">({{ cat.count }})</span>
+    </a>
+  {% endfor %}
+</div>
