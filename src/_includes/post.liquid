@@ -200,7 +200,15 @@ layout: base
 </section>
 
 <script>
-async function submitForm(event) {
+  // Force hide the success message when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    const successMsg = document.querySelector('#c_successMessage');
+    if (successMsg) {
+      successMsg.style.display = 'none';
+    }
+  });
+
+  async function submitForm(event) {
   event.preventDefault();
   
   const form = event.target;
