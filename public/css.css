@@ -2105,14 +2105,14 @@ border-bottom: 3px solid rgba(200, 94, 65, 0.7);
 
 
 span.footer-text {
-    position:absolute;
+    position:relative;
     display:inline-block;
     font-family:olivetti;
     color:#c1bdb0;
     font-size:26px;
     text-transform: lowercase;
     margin:0 auto;
-    bottom:50px;
+    top:430px;
     text-shadow:0px 0px 7px #000;
 
 }
