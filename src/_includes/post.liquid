@@ -84,7 +84,7 @@ layout: base
 <!-- CATEGORIES -->
 <p class="sml">
   {% for cat in categories %}
-    <a href="/categories/{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %} {% endunless %}
+    <a href="/blog/categories/{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %} {% endunless %}
   {% endfor %}
 </p>
 
