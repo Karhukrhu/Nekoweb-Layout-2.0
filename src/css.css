@@ -824,6 +824,16 @@ p.sml::first-letter {
 
 @media (max-width: 700px) {
 .pc {
+    display:none;
+}
+.mobile {
+    display:inline-block;
+}
+
+}
+
+@media (min-width: 700px) {
+.pc {
     display:inline-block;
 }
 .mobile {
