@@ -421,7 +421,7 @@ function createComment(data) {
     text.innerText = filteredText;
     text.className = 'c-text sml';
 
-    // 👇 If this is a reply, wrap the arrow + text in .c-replyText-wrapper
+    // If this is a reply, wrap the arrow + text in .c-replyText-wrapper
     if (data.Reply) {
         let replyTextWrapper = document.createElement('div');
         replyTextWrapper.className = 'c-replytext-wrapper';
@@ -438,7 +438,7 @@ function createComment(data) {
         // Add the wrapper to the comment
         comment.appendChild(replyTextWrapper);
     } else {
-        // 👆 If it's a main comment, just add the text directly (no wrapper)
+        // If it's a main comment, just add the text directly (no wrapper)
         comment.appendChild(text);
     }
 
