@@ -1,15 +1,13 @@
 ---
-permalink: /feed.xml
+permalink: /blog/feed.xml
 eleventyExcludeFromCollections: true
 ---
-<!-- FORCE REBUILD v2 -->
-<?xml version="1.0" encoding="utf-8"?>
-...
 
 <rss version="2.0">
 <channel>
   <title>Karhukarhu Blog</title>
   <subtitle>Latest posts from Karhukarhu</subtitle>
+  <link>https://karhukarhu.place/blog/feed.xml</link>
   
   {% assign sorted_posts = collections.post | sort: 'date' | reverse %}
   {% assign newest_post = sorted_posts | first %}
