@@ -1070,10 +1070,11 @@ padding:0px;
 
 .content-area .quiz {
   text-align: center;
+  background-blend-mode:multiply;background-color:#c1bdb0;
 }
 
 .content-area .quiz a:hover{
-  background: none;
+  background-color: transparent;
   border:0px;
 }
 
