@@ -1654,6 +1654,12 @@ button#c_submitButton:hover {
 .c-timestamp {
   display: block;
     float: none;
+
+}
+
+.c-reply .c-timestamp {
+  display: block;
+    float: none;
     margin-left:28px;
 
 }
@@ -2041,13 +2047,8 @@ border-bottom: 3px solid rgba(200, 94, 65, 0.7);
     .footer-content {
         background-image: url(assets/footer_600.png);
         max-width: 305px; 
-        
-
         height: auto; 
-        
-
-        aspect-ratio: 998 / 510; 
-        
+        aspect-ratio: 998 / 510;     
         margin: 0 auto; 
     }
 
@@ -2119,16 +2120,16 @@ span.footer-text {
 
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
     span.footer-text {
-        font-size:20px;
-        top:445px;
+        font-size:26px;
+        top:455px;
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 820px) {
     span.footer-text {
-        font-size:16px;
+        font-size:18px;
         top:465px;
     }
 }
