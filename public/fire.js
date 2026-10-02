@@ -98,35 +98,55 @@ document.addEventListener("visibilitychange", () => {
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById('toggle-videos');
+    const videos = document.querySelectorAll('video');
     
-    // Only run if the button actually exists on the page
+    // 1. Check localStorage to see if the user previously paused the videos
+    const isSavedAsPaused = localStorage.getItem('videosPaused') === 'true';
+
+    // 2. Apply the saved state to the button (if the button exists on this page)
+    if (toggleBtn) {
+        if (isSavedAsPaused) {
+            toggleBtn.setAttribute('data-state', 'paused');
+            toggleBtn.textContent = "turn them on";
+        } else {
+            toggleBtn.setAttribute('data-state', 'playing');
+            toggleBtn.textContent = "turn them off";
+        }
+    }
+
+    // 3. Apply the saved state to all videos on the current page
+    videos.forEach(v => {
+        if (isSavedAsPaused) {
+            v.pause(); // Freeze them
+        } else {
+            v.play().catch(() => {}); // Try to play them (catches browser autoplay blocks)
+        }
+    });
+
+    // 4. Handle the button click
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
-            // 1. Find all video elements on the page
-            const videos = document.querySelectorAll('video');
-            
-            // 2. Check if we are currently turning them off or on
-            // We'll use a custom data attribute to keep track of the state
             const arePaused = toggleBtn.getAttribute('data-state') === 'paused';
             
             videos.forEach(v => {
                 if (!arePaused) {
-                    // STOP the video (freezes it on the current frame)
+                    // User clicked "turn them off" -> PAUSE the videos
                     v.pause();
                 } else {
-                    // PLAY the video again
+                    // User clicked "turn them on" -> PLAY the videos
                     v.play().catch(() => {}); 
                 }
             });
             
-            // 3. Update the state and button text
+            // 5. Update the button AND save the new state to localStorage
             if (!arePaused) {
+                localStorage.setItem('videosPaused', 'true'); // SAVE the pause state
                 toggleBtn.setAttribute('data-state', 'paused');
                 toggleBtn.textContent = "turn them on";
             } else {
+                localStorage.setItem('videosPaused', 'false'); // SAVE the play state
                 toggleBtn.setAttribute('data-state', 'playing');
                 toggleBtn.textContent = "turn them off";
-
             }
         });
     }
