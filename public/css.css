@@ -1077,9 +1077,11 @@ padding:0px;
     background-size: contain; 
     background-position: center;
     background-repeat: no-repeat;
+    background-color: transparent;
 }
 .content-area .quiz a:hover{
   border:0px;
+  background-color: #c1bdb0;
 }
 
 
