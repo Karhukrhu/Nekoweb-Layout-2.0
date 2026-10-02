@@ -32,5 +32,5 @@ jobs:
           BUILD_DIR: './public'             # <-- Copies EVERYTHING Eleventy built!
           DEPLOY_DIR: '/karhukarhu.place'   # <-- Puts it in the right place!
           CLEANUP: 'True'                   # <-- Cleans up the old broken files!
-          DELAY: '4'                        # <-- 3 seconds per file. Beats the rate limit!
+          DELAY: '5'                        # <-- 3 seconds per file. Beats the rate limit!
           NEKOWEB_PAGENAME: 'karhukarhu'
