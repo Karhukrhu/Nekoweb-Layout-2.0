@@ -1654,7 +1654,7 @@ button#c_submitButton:hover {
 .c-timestamp {
   display: block;
     float: none;
-    margin-left:0;
+    margin-left:28px;
 
 }
     }
@@ -2122,14 +2122,14 @@ span.footer-text {
 @media (max-width: 1000px) {
     span.footer-text {
         font-size:20px;
-        bottom:20px;
+        top:445px;
     }
 }
 
 @media (max-width: 700px) {
     span.footer-text {
         font-size:16px;
-        bottom:15px;
+        top:465px;
     }
 }
 
