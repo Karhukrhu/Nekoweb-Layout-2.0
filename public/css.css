@@ -489,7 +489,7 @@ width: 100%;
   
 }
 
-@media (max-height: 700px) and (max-width:1000px) {
+@media (max-height: 700px) and (max-width:550px) {
 
     .hamburger-btn {
     display: block;
