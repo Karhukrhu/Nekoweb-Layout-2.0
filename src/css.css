@@ -507,15 +507,12 @@ width: 100%;
     height: 25px;
   }
  
-/* ==========================================
-   1. THE MAIN MENU CONTAINER
-   ========================================== */
+
 #top .top-menu .main-menu-list.mobile-active {
 
     display: flex !important;
     flex-direction: row !important; 
     
-    /* 1. FORCES them to stay on one single row, no matter what */
     flex-wrap: nowrap !important; 
     
     justify-content: center;         
@@ -532,33 +529,25 @@ width: 100%;
     overflow-y: auto;
     z-index: 100 !important; 
 
-    /* 2. SCALES THE GAP: Minimum 10px, Ideal 2% of screen width, Max 30px */
     gap: clamp(10px, 2vw, 30px) !important; 
 }
 
-/* ==========================================
-   2. THE MAIN LINKS (Scaling Font)
-   ========================================== */
+
 #top .top-menu .main-menu-list.mobile-active > li > a {
-    /* 3. SCALES THE FONT: Minimum 12px, Ideal 2.2% of screen width, Max 24px */
+
     font-size: clamp(23px, 2.9vw, 26px) !important; 
     
-    /* 4. Prevents the text itself from breaking into two lines (e.g. "gall-ery") */
     white-space: nowrap !important; 
 }
 
-/* ==========================================
-   3. THE MAIN LIST ITEMS (Anchors)
-   ========================================== */
+
 #top .top-menu .main-menu-list.mobile-active > li {
     position: relative; 
     margin: 0 !important;
     list-style: none;
 }
 
-/* ==========================================
-   4. THE DROPDOWNS (Floating underneath)
-   ========================================== */
+
 #top .top-menu .main-menu-list.mobile-active .dropdown-content {
     position: absolute; 
     top: 100%;          
@@ -569,9 +558,7 @@ width: 100%;
     z-index: 101;       
 }
 
-/* ==========================================
-   5. DROPDOWN ITEMS & TREE LINES
-   ========================================== */
+
 #top .top-menu .main-menu-list.mobile-active .dropdown-content li {
     position: relative; 
     padding: 10px 5px;
@@ -602,13 +589,11 @@ width: 100%;
 }
 
 #top .top-menu .dropdown-content li a {
-    /* Dropdown links stay at a readable fixed size */
+
     font-size: 18px; 
 }
 
-/* ==========================================
-   6. HAMBURGER ANIMATION
-   ========================================== */
+
 .hamburger-btn.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 .hamburger-btn.active span:nth-child(2) { opacity: 0; }
 .hamburger-btn.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
