@@ -371,7 +371,7 @@ width: 100%;
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1000px) and (min-height: 750px) {
   
 
   .hamburger-btn {
