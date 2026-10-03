@@ -490,11 +490,28 @@ width: 100%;
 }
 
 @media (max-height: 750px) {
+
+    .hamburger-btn {
+    display: block;
+    position: absolute;
+    
+    /* CHANGE THIS: 60px - 35px = 25px */
+    top: 25px !important; 
+    
+    left: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1000000 !important;
+    width: 40px;
+    height: 25px;
+  }
  
 /* ==========================================
    1. THE MAIN MENU CONTAINER
    ========================================== */
 #top .top-menu .main-menu-list.mobile-active {
+
     display: flex !important;
     flex-direction: row !important; 
     
@@ -510,7 +527,7 @@ width: 100%;
     width: 100% !important;
     height: 100vh !important;
     background-color: #000 !important;
-    padding: 20px !important;
+    padding: 20px 20px 90px 20px !important; 
     box-sizing: border-box;
     overflow-y: auto;
     z-index: 100 !important; 
@@ -1194,6 +1211,13 @@ padding:0px;
   background-color: #c1bdb0;
 }
 
+
+@media (max-width: 700px) {
+.content-area .quiz a, .content-area .quiz a:visited {
+  max-width:100%;
+  max-height: auto;
+}
+}
 
 
 /*BLOGG*/
