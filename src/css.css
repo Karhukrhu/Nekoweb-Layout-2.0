@@ -371,7 +371,7 @@ width: 100%;
 }
 
 
-@media (max-width: 1000px) and (min-height: 750px) {
+@media (max-width: 1000px) {
   
 
   .hamburger-btn {
@@ -489,7 +489,7 @@ width: 100%;
   
 }
 
-@media (max-height: 750px) {
+@media (max-height: 700px) and (max-width:1000px) {
 
     .hamburger-btn {
     display: block;
