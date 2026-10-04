@@ -183,3 +183,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+// Make tooltips follow the cursor
+document.querySelectorAll('.post-warning').forEach(warning => {
+  warning.addEventListener('mousemove', (e) => {
+    // Update the CSS variables with the current mouse X and Y coordinates
+    warning.style.setProperty('--mouse-x', e.clientX + 'px');
+    warning.style.setProperty('--mouse-y', e.clientY + 'px');
+  });
+});
