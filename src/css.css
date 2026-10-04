@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: typewriter; /* set name */
-  src: url(https://karhukrhu.github.io/[YOUR-REPOSITORY-NAME]/[YOUR-FONT-FILE-NAME]/assets/Typewriter.ttf); /* url of the font */
+  src: url(/assets/Typewriter.ttf); /* url of the font */
 }
 
 @font-face {
