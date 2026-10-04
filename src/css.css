@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: typewriter; /* set name */
-  src: url(/assets/Typewriter.ttf); /* url of the font */
+  src: url(https://karhukrhu.github.io/[YOUR-REPOSITORY-NAME]/[YOUR-FONT-FILE-NAME]/assets/Typewriter.ttf); /* url of the font */
 }
 
 @font-face {
@@ -1039,7 +1039,7 @@ a.site-button {
     height:31px;
     background-blend-mode:multiply;background-color:#c1bdb0;
     padding: 0px;
-    margin: 2px;
+    margin: 2px 2px 5px 2px;
     border:0px;
 
 }
