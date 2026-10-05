@@ -12,5 +12,19 @@
     "slug": "stupid",
     "date": "September 23, 2026",
     "is_author": true 
+  },
+  {
+    "name": "sleepy",
+    "website": "https://littleabyss.nekoweb.org/index.html",
+    "comment": "Hello, I love the new layout and also I relate a lot to what you said about why you changed to it. Sometimes you get so distracted in trying to make your site pretty that you forget to make it also reflect yourself. I did the same mistake when I first started my indie site so it's really comforting to read that I am not alone in feeling that way.\n\nI really love the symbolism of your sites theming. wishing you a lovely day.",
+    "slug": "layout2",
+    "date": "October 4, 2026"
+  },
+    {
+    "name": "Karhukarhu",
+    "comment": "Exactly! I actually thought I could bear the old layout a bit longer but it felt like I was pretending to be something. I'm happy the entry brought some comfort to you, not happy you had to go throught the same.\n\nBy the way, it was you I stole the idea of a link tree from, I really liked it and I think it creates a lot of clarity to the navigation.\n\nI hope you'll have a nice week!",
+    "slug": "layout2",
+    "date": "October 5, 2026",
+    "is_author": true 
   }
 ]

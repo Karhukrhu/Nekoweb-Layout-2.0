@@ -158,7 +158,14 @@ layout: base
             <a href="{{ comment.website }}" target="_blank" rel="noopener noreferrer" class="c-site">website</a>
           {% endif %}
           <span class="c-timestamp">{{ comment.date }}</span>
-          <div class="c-text">{{ comment.comment }}</div>
+                    <div class="c-text">
+            {% assign lines = comment.comment | split: "\n" %}
+            {% for line in lines %}
+              {% if line != blank %}
+                <p class="sml">{{ line | strip }}</p>
+              {% endif %}
+            {% endfor %}
+          </div>
         </div>
       {% endunless %}
     {% endfor %}
@@ -172,7 +179,15 @@ layout: base
               <span class="c-timestamp">{{ comment.date }}</span>
             </div>
             <div class="c-replytext-wrapper">
-              <div class="c-replytext-arrow">⤷</div><div class="c-replytext">{{ comment.comment }}</div>
+              <div class="c-replytext-arrow">⤷</div>
+                               <div class="c-text">
+            {% assign lines = comment.comment | split: "\n" %}
+            {% for line in lines %}
+              {% if line != blank %}
+                <p class="sml">{{ line | strip }}</p>
+              {% endif %}
+            {% endfor %}
+          </div>
             </div>
           </div>
         </div>
