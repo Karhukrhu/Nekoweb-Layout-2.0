@@ -193,3 +193,78 @@ document.querySelectorAll('.post-warning').forEach(warning => {
     warning.style.setProperty('--mouse-y', e.clientY + 'px');
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('custom-warning-modal');
+  const messageEl = document.getElementById('modal-warning-message');
+  const proceedBtn = document.getElementById('modal-proceed-btn');
+  
+  // 1. Handle "Proceed" Button
+  if (proceedBtn && modal) {
+    proceedBtn.addEventListener('click', () => {
+      if (modal.dataset.pendingUrl) {
+        window.location.href = modal.dataset.pendingUrl;
+      }
+    });
+  }
+
+  // 2. Handle "Cancel" Button & Clicking the Dark Background
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal || e.target.id === 'modal-cancel-btn') {
+        modal.style.display = 'none';
+        modal.classList.remove('active');
+        modal.dataset.pendingUrl = '';
+      }
+    });
+  }
+
+  // 3. Event Delegation: Listen for clicks anywhere on the page
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('.post-title[data-warning]');
+    
+    if (link && modal && messageEl) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // --- FORMAT THE TAGS ---
+      const rawWarning = link.getAttribute('data-warning');
+      const tags = rawWarning.split(',').map(tag => `<strong>${tag.trim()}</strong>`).filter(tag => tag !== '<strong></strong>');
+      
+      // 1. Start the FIRST paragraph (The list of warnings)
+      let formattedMessage = '<p class="sml">This post contains: ';
+      
+      // 2. Add the tags
+      if (tags.length === 1) {
+        formattedMessage += tags[0];
+      } else if (tags.length === 2) {
+        formattedMessage += `${tags[0]} and ${tags[1]}`;
+      } else {
+        const lastTag = tags.pop();
+        formattedMessage += tags.join(", ") + ", and " + lastTag;
+      }
+      
+      // 3. Close the first paragraph RIGHT HERE
+      formattedMessage += '.</p>';
+      
+      // 4. Start a BRAND NEW paragraph for the caution text
+      formattedMessage += '<p class="sml">The post might be for adults only.</p>';
+      
+      // 5. Add custom note in its own paragraph (If it exists)
+      const footerNote = link.getAttribute('data-warning-note');
+      if (footerNote) {
+        formattedMessage += `<p class="sml">${footerNote}</p>`;
+      }
+      
+      // Inject the HTML and show modal
+      messageEl.innerHTML = formattedMessage;
+      
+      modal.dataset.pendingUrl = link.href;
+      modal.style.display = 'flex';
+      modal.style.opacity = '1';
+      modal.style.visibility = 'visible';
+      modal.classList.add('active');
+    }
+  });
+});

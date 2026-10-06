@@ -29,7 +29,7 @@ layout: base
     {% endif %}
 
     <!-- 2. The Post Title Link -->
-    <a class="post-title" href="{{ post.url }}">{{ post.data.title }}</a> 
+    <a class="post-title" href="{{ post.url }}" {% if post.data.warning %}data-warning="{{ post.data.warning }}"{% endif %}>{{ post.data.title }}</a> 
     
     <!-- 3. The Date -->
     <div class="post-date">{{ post.date | niceDate: false }}</div> 

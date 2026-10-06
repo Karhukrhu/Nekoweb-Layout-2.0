@@ -1634,6 +1634,106 @@ a.tag-item, a.tag-item:visited {
   visibility: visible;
 }
 
+/* 1. The Dark Overlay */
+.warning-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex; /* CRITICAL: Must be flex to center the box */
+  justify-content: center;
+  align-items: center;
+  z-index: 999999; /* CRITICAL: Must be higher than everything else */
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.warning-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 3. The Modal Box */
+.warning-modal-box {
+  background-image: url(/assets/bg.png);
+  border: 3px solid rgba(200, 94, 65, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #000;
+  font-family: typewriter, sans-serif;
+  padding: 0px 0px 30px 0px;
+  max-width: 400px;
+  width: 90%;
+  text-align: left;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.warning-modal-overlay.active .warning-modal-box {
+  transform: scale(1); /* Slight pop-in effect */
+}
+
+/* 4. Modal Typography */
+.warning-modal-box h2 {
+  background-color: rgba(200, 94, 65, 0.7);
+  margin-top: 0;
+  margin-bottom:0;
+  letter-spacing: 2px;
+  font-size: 17px;
+  color:#000;
+  text-align: left;
+  padding:0px 10px 5px 10px;
+}
+
+.warning-modal-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  padding:5px;
+  margin-top:0px;
+  margin-bottom: 5px;
+}
+
+#modal-warning-message p.sml {
+  margin-top: 0;
+}
+
+/* 5. Modal Buttons */
+.warning-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top:20px;
+}
+
+.warning-modal-btn {
+  padding: 10px 20px;
+  font-family: typewriter, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: 2px solid #c85e41;
+  background: transparent;
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+.warning-modal-btn.proceed {
+  background: #c85e41;
+  color: #000;
+  font-weight: bold;
+}
+
+.warning-modal-btn.proceed:hover {
+  background: #a84a30;
+  border-color: #a84a30;
+}
+
+.warning-modal-btn.cancel:hover {
+  background: rgba(200, 94, 65, 0.2);
+}
+
 
 
 
