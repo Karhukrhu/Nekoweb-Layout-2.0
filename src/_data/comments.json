@@ -1,11 +1,14 @@
 [
   {
+    "id": "c5",
     "name": "Speruruq",
     "comment": "Hello, miss Karhukarhu. That's a cute name by the way! I'm not presumptuous enough to say I understand what you're going through, but in my yet lacking understanding I can somewhat relate to you. A lot of my life feels dull and I desperately try to give it colour through trying to get inspired and creating something of my own. And yet, it doesn't feel real or as magical as the origin of my inspirations. I try to find a reasonable explanation for this and often end up wandering into my jumbled thoughts which appear blurred and floating like smoke.\n\nOne major event that is correlated to this, or perhaps led to me becoming like this in the first place is when I woke up one day to find my heart hammering against my ribs. I felt detached from everything one could perceive, and had nothing physical to falsify what I was feeling. Ever since that day, I've started trying keeping memoirs of things near me, in which I've poured my efforts and time. It makes me feel less of a fleeting being in the world. I'm sorry to rant like this in your comment section, but I'd be happy if it makes you feel that you're not alone. Sincerely, Speruruq. ",
     "slug": "stupid",
     "date": "October 10, 2026"
   },
     {
+    "id": "c6",
+    "reply_to": "c5",
     "name": "Karhukarhu",
     "comment": "Hi Speruruq, glad to receive a comment from you! I think it is important to at least try to give life some colour even though it often feels useless. There has to be something to keep us sane, right? I might have had a similar feeling, the feeling of being detatched form the rest of the world and being spearate from everything. It was pretty scary. I would love to see your memoirs if you ever publish them! I wish you a wonderful day.",
     "slug": "stupid",
@@ -13,6 +16,7 @@
     "is_author": true 
   },
   {
+    "id": "c1",
     "name": "Aeskenic",
     "website": "https://aeskenic.nekoweb.org/",
     "comment": "You are not stupid but wonderful: and this new comment widget works :)",
@@ -20,6 +24,8 @@
     "date": "September 23, 2026"
   },
     {
+    "id": "c2",
+    "reply_to": "c1", 
     "name": "Karhukarhu",
     "comment": "Thank you for your kind words! I'm slowly but surely working my way out of this feeling. And yes, I decided to give this comment section a try and see how this will end up working.",
     "slug": "stupid",
@@ -27,6 +33,7 @@
     "is_author": true 
   },
   {
+    "id": "c3",
     "name": "sleepy",
     "website": "https://littleabyss.nekoweb.org/index.html",
     "comment": "Hello, I love the new layout and also I relate a lot to what you said about why you changed to it. Sometimes you get so distracted in trying to make your site pretty that you forget to make it also reflect yourself. I did the same mistake when I first started my indie site so it's really comforting to read that I am not alone in feeling that way.\n\nI really love the symbolism of your sites theming. wishing you a lovely day.",
@@ -34,6 +41,8 @@
     "date": "October 4, 2026"
   },
     {
+    "id": "c4",
+    "reply_to": "c3",
     "name": "Karhukarhu",
     "comment": "Exactly! I actually thought I could bear the old layout a bit longer but it felt like I was pretending to be something. I'm happy the entry brought some comfort to you, not happy you had to go throught the same.\n\nBy the way, it was you I stole the idea of a link tree from, I really liked it and I think it creates a lot of clarity to the navigation.\n\nI hope you'll have a nice week!",
     "slug": "layout2",
