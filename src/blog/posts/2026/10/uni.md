@@ -1,6 +1,6 @@
 ---
 title: Why I Dropped Out of University
-date: 2026-10-01
+date: 2026-10-17
 categories: ["personal"]
 tags: post
 description: "I try to depict my mental struggles during uni years as accuratley as I can."
