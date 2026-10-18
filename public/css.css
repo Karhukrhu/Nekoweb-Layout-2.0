@@ -1053,6 +1053,66 @@ a.site-button:hover {
     border:0px;
 }
 
+a.clique {
+  display:inline-block;
+  background-blend-mode:multiply;background-color:#c1bdb0;
+  padding: 0px;
+  margin: 2px 2px 0px 2px;
+  border:0px;
+}
+
+a.clique:hover {
+      display: inline-block;
+    background-blend-mode:normal;
+    background-color:transparent;
+    padding: 0px;
+    border:0px;
+}
+
+/* 1. Ensure the badge is ready for the tooltip */
+.clique {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  /* ... keep your existing border/background styles here ... */
+}
+
+/* 2. The Tooltip Box */
+.clique::after {
+  content: attr(data-tooltip);
+  
+  /* CRITICAL: Fixed position allows it to follow the viewport cursor */
+  position: fixed; 
+  left: var(--mouse-x, 0px);
+  top: var(--mouse-y, 0px);
+  
+  /* Offset it slightly down and right so it doesn't block your cursor */
+  transform: translate(15px, 15px); 
+  
+  /* Styling to match your theme */
+   background-color: rgba(200, 94, 65, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 3px solid rgba(200, 94, 65, 0.7);
+  color: #000;
+  font-family: typewriter;
+  font-size: 12px;
+  padding: 6px 10px;
+  white-space: nowrap;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease, visibility 0.1s ease;
+  z-index: 10000;
+  pointer-events: none; 
+}
+
+/* 3. Show on Hover */
+.clique:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 .fanlistings-design {
     font-size: 0; 

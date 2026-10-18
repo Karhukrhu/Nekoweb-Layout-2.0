@@ -186,12 +186,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Make tooltips follow the cursor
-document.querySelectorAll('.post-warning').forEach(warning => {
-  warning.addEventListener('mousemove', (e) => {
-    // Update the CSS variables with the current mouse X and Y coordinates
-    warning.style.setProperty('--mouse-x', e.clientX + 'px');
-    warning.style.setProperty('--mouse-y', e.clientY + 'px');
-  });
+document.addEventListener('mousemove', (e) => {
+  // Check if the mouse is currently hovering over a post warning OR a clique badge
+  const target = e.target.closest('.post-warning, .clique');
+  
+  if (target) {
+    // Update the CSS variables for that specific element
+    target.style.setProperty('--mouse-x', e.clientX + 'px');
+    target.style.setProperty('--mouse-y', e.clientY + 'px');
+  }
 });
 
 
