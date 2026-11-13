@@ -1702,7 +1702,8 @@ a.tag-item, a.tag-item:visited {
   display: flex; /* CRITICAL: Must be flex to center the box */
   justify-content: center;
   align-items: center;
-  z-index: 999999; /* CRITICAL: Must be higher than everything else */
+  z-index: 999999; 
+  backdrop-filter: blur(5px);
   
   opacity: 0;
   visibility: hidden;
@@ -1755,7 +1756,7 @@ a.tag-item, a.tag-item:visited {
 }
 
 #modal-warning-message p.sml {
-  margin-top: 0;
+  margin:10px 10px;
 }
 
 /* 5. Modal Buttons */
@@ -1764,10 +1765,11 @@ a.tag-item, a.tag-item:visited {
   justify-content: center;
   gap: 15px;
   margin-top:20px;
+  padding: 0 30px;
 }
 
 .warning-modal-btn {
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-family: typewriter, sans-serif;
   font-size: 13px;
   text-transform: uppercase;
@@ -1794,16 +1796,6 @@ a.tag-item, a.tag-item:visited {
   background: rgba(200, 94, 65, 0.2);
 }
 
-.warning-modal-btn.home {
-  background: transparent;
-  color: #c1bdb0;
-  border: 2px solid #c1bdb0;
-}
-.warning-modal-btn.home:hover {
-  background: rgba(200, 94, 65, 0.2);
-  border-color: #c85e41;
-  color: #c85e41;
-}
 
 
 

@@ -150,20 +150,21 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // ==========================================
-// 6. CONTENT WARNING MODAL (Upgraded & Unified)
+// 6. CONTENT WARNING MODAL (PAGE LOAD ONLY)
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('custom-warning-modal');
   const messageEl = document.getElementById('modal-warning-message');
   const proceedBtn = document.getElementById('modal-proceed-btn');
-  const cancelBtn = document.getElementById('modal-cancel-btn');
-  const homeBtn = document.getElementById('modal-home-btn'); // NEW
 
-  // --- HELPER: Formats the comma-separated tags beautifully ---
   function formatWarning(rawWarning, footerNote) {
+    if (!rawWarning || !rawWarning.trim()) {
+      return footerNote ? `<p class="sml">${footerNote}</p>` : '';
+    }
+
     const tags = rawWarning.split(',').map(tag => `<strong>${tag.trim()}</strong>`).filter(tag => tag !== '<strong></strong>');
     let formattedMessage = '<p class="sml">This post contains: ';
-    
+
     if (tags.length === 1) {
       formattedMessage += tags[0];
     } else if (tags.length === 2) {
@@ -173,74 +174,50 @@ document.addEventListener('DOMContentLoaded', () => {
       formattedMessage += tags.join(", ") + ", and " + lastTag;
     }
     formattedMessage += '.</p><p class="sml">The post might be for adults only.</p>';
-    
+
     if (footerNote) {
       formattedMessage += `<p class="sml">${footerNote}</p>`;
     }
     return formattedMessage;
   }
 
-  // --- HELPER: Shows the modal ---
   function showModal(message, pendingUrl = '') {
     if (!modal || !messageEl) return;
     messageEl.innerHTML = message;
-    modal.dataset.pendingUrl = pendingUrl; 
+    modal.dataset.pendingUrl = pendingUrl;
     modal.style.display = 'flex';
     modal.style.opacity = '1';
     modal.style.visibility = 'visible';
     modal.classList.add('active');
   }
 
-  // 1. Handle "Take Me Home" Button (NEW)
-  if (homeBtn) {
-    homeBtn.addEventListener('click', () => {
-      window.location.href = '/'; // Change to '/blog/' if your homepage is there
-    });
-  }
-
-  // 2. Handle "Proceed" Button
+  // "Proceed" button
   if (proceedBtn && modal) {
     proceedBtn.addEventListener('click', () => {
-      if (modal.dataset.pendingUrl) {
-        // Navigating from a link click
-        window.location.href = modal.dataset.pendingUrl;
-      } else {
-        // Already on the post page, just close the modal
-        modal.style.display = 'none';
-        modal.classList.remove('active');
-      }
+      // Since we are already on the page, "Proceed" just closes the modal
+      modal.style.display = 'none';
+      modal.classList.remove('active');
     });
   }
 
-  // 3. Handle "Cancel" Button & Clicking the Dark Background
+  // "Go Back" button + clicking the dark background
   if (modal) {
     modal.addEventListener('click', function(e) {
       if (e.target === modal || e.target.id === 'modal-cancel-btn') {
         modal.style.display = 'none';
         modal.classList.remove('active');
-        modal.dataset.pendingUrl = '';
       }
     });
   }
 
-  // 4. Event Delegation: Listen for clicks on links (Blog List / Archive pages)
-  document.addEventListener('click', function(e) {
-    const link = e.target.closest('.post-title[data-warning]');
-    if (link && modal && messageEl) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const rawWarning = link.getAttribute('data-warning');
-      const footerNote = link.getAttribute('data-warning-note');
-      showModal(formatWarning(rawWarning, footerNote), link.href);
-    }
-  });
+  // --- CLICK LISTENER REMOVED ---
+  // The links on the blog list will now just open normally!
 
-  // 5. NEW: Auto-trigger on the actual Post Page if it has a warning
+  // Auto-trigger when landing directly on a warned post
   const pageWarningData = document.getElementById('page-warning-data');
   if (pageWarningData) {
     const rawWarning = pageWarningData.getAttribute('data-warning');
     const footerNote = pageWarningData.getAttribute('data-note');
-    showModal(formatWarning(rawWarning, footerNote), ''); 
+    showModal(formatWarning(rawWarning, footerNote), '');
   }
 });

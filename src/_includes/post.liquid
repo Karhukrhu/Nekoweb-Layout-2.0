@@ -2,7 +2,11 @@
 layout: base
 ---
 {% if warning %}
-  <div id="page-warning-data" data-warning="{{ warning }}" {% if warning_note %}data-note="{{ warning_note }}"{% endif %} style="display: none;"></div>
+  <div id="page-warning-data" 
+       data-warning="{{ warning }}" 
+       {% if warning_note %}data-note="{{ warning_note }}"{% endif %} 
+       style="display: none;">
+  </div>
 {% endif %}
 
 <h2>Blog</h2>
