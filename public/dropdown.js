@@ -200,18 +200,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // "Go Back" button + clicking the dark background
+  // "Take Me Back" button + clicking the dark background
   if (modal) {
     modal.addEventListener('click', function(e) {
       if (e.target === modal || e.target.id === 'modal-cancel-btn') {
         modal.style.display = 'none';
         modal.classList.remove('active');
+        
+        // --- BULLETPROOF ESCAPE HATCH LOGIC ---
+        if (!modal.dataset.pendingUrl) {
+          // 1. Try to get the URL of the page they came from
+          const referrer = document.referrer;
+          
+          // 2. If it exists and isn't the current page, force navigation to it
+          if (referrer && referrer !== window.location.href) {
+            window.location.href = referrer;
+          } else {
+            // 3. Fallback: if no referrer (e.g., typed URL directly), try browser history
+            window.history.back();
+          }
+        }
+        
+        // Clear the pending URL
+        modal.dataset.pendingUrl = '';
       }
     });
   }
-
-  // --- CLICK LISTENER REMOVED ---
-  // The links on the blog list will now just open normally!
 
   // Auto-trigger when landing directly on a warned post
   const pageWarningData = document.getElementById('page-warning-data');
