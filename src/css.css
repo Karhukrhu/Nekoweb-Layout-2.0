@@ -1794,6 +1794,17 @@ a.tag-item, a.tag-item:visited {
   background: rgba(200, 94, 65, 0.2);
 }
 
+.warning-modal-btn.home {
+  background: transparent;
+  color: #c1bdb0;
+  border: 2px solid #c1bdb0;
+}
+.warning-modal-btn.home:hover {
+  background: rgba(200, 94, 65, 0.2);
+  border-color: #c85e41;
+  color: #c85e41;
+}
+
 
 
 
