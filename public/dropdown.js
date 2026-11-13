@@ -194,7 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // "Proceed" button
   if (proceedBtn && modal) {
     proceedBtn.addEventListener('click', () => {
-      // Since we are already on the page, "Proceed" just closes the modal
       modal.style.display = 'none';
       modal.classList.remove('active');
     });
@@ -204,25 +203,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modal) {
     modal.addEventListener('click', function(e) {
       if (e.target === modal || e.target.id === 'modal-cancel-btn') {
+        // 1. Hide the modal immediately
         modal.style.display = 'none';
         modal.classList.remove('active');
-        
-        // --- BULLETPROOF ESCAPE HATCH LOGIC ---
-        if (!modal.dataset.pendingUrl) {
-          // 1. Try to get the URL of the page they came from
-          const referrer = document.referrer;
-          
-          // 2. If it exists and isn't the current page, force navigation to it
-          if (referrer && referrer !== window.location.href) {
-            window.location.href = referrer;
-          } else {
-            // 3. Fallback: if no referrer (e.g., typed URL directly), try browser history
-            window.history.back();
-          }
-        }
-        
-        // Clear the pending URL
         modal.dataset.pendingUrl = '';
+        
+        // 2. UNIVERSAL GO BACK: This works for listings, external links, and search engines
+        window.history.back();
       }
     });
   }
