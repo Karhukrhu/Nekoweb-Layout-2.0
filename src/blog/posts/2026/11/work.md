@@ -1,7 +1,7 @@
 ---
 title: On Joblessness, Employment, Dream Job and Underachievement
 date: 2026-11-13
-categories: ["personal, work"]
+categories: ["personal", "work"]
 tags: post
 description: "About my career path, ups and downs."
 ---
